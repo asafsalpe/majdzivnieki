@@ -3,7 +3,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #443730;
+    background-color: #333;
     display: flex; 
     justify-content: center;
   }
@@ -45,6 +45,7 @@ body {
   padding: 0;
   color: #333;
   line-height: 1.6;
+  text-align: center;
 }
 
 .container {
@@ -75,6 +76,7 @@ body {
   background-size: cover;
   background-position: center;
   color: #fff;
+  margin-bottom: 0;
 }
 
 .hero h1 {
@@ -136,4 +138,114 @@ body {
   .column {
     width: 100%;
   }
+}
+
+.image-text-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 0;
+}
+
+.image-text-container img {
+  width: 50%;
+  height: auto;
+  margin-right: 100px;
+}
+.image-text-container p {
+  width: 50%;
+  margin: 0;
+  text-align: justify;
+}
+
+.centered-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 575px;
+  padding: 20px;
+  font-family: "Circular Book";
+  font-weight: 400;
+  letter-spacing: 0px;
+  font-style: normal;
+  font-size: large;
+}
+.products {
+  background: white;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+}
+
+.products-inner {
+  max-width: 1200px; /* Maximum width for content */
+  margin: 0 auto; /* Center the inner content */
+  padding: 20px 20px; /* Optional: Add some horizontal padding */
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: left;
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+}
+
+.product {
+  background: #f0ead2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  width: 100px;
+  height: auto;
+}
+
+.product h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.product p {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin: 5px;
+}
+
+.product .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: auto; /* Pushes button to the bottom of the product box */
+}
+
+.products-title {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 25px;
 }
