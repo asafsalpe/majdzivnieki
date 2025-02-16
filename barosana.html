@@ -4,7 +4,20 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
-    <title>Barošana</title>
+    <title>Kaķa Barošana un Uzturs</title>
+    <script>
+        function calculateFeeding() {
+            var age = document.getElementById('age').value;
+            var weight = document.getElementById('weight').value;
+            var result = "";
+            if (age <=6) {
+                result = "Jūsu kaķēnam ieteicams ēst 3-4 reizes dienā, aptuveni " + (weight * 50) + " gramus dienā.";
+            } else {
+                result = "Jūsu kaķēnam ieteicams ēst 2-3 reizes dienām, aptuveni " + (weight * 30) + " gramus dienā.";
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -21,12 +34,77 @@
     </header>
     
     <section class="container">
-        <h1>Kaķa barošana</h1>
-        <p>abc</p>
-        <div>
-            <p>a</p>
-            <p>b</p>
-            <p>c</p>
+        <h1>Kaķa Barošana un Uzturs</h1>
+        <div class="info-block">
+            <h2>Barošanas Biežums</h2>
+            <p>Kaķa barošanas biežums ir atkarīgs no vairākiem faktoriem:</p>
+            <ul>
+                <li><strong>Kaķēni (līdz 6 mēnešiem):</strong> 3-4 reizes dienā</li>
+                <li><strong>Pieauguši kaķi:</strong> 2-3 reizes dienā</li>
+                <li><strong>Gados vecāki kaķi:</strong> 2 reizes dienā, pielāgojot porcijas</li>
+            </ul>
+            <div class = "interactive-tool">
+                <h3>Barošanas kalkulators</h3>
+                <p>Ievadiet sava kaķa vecumu un svaru, lai uzzinātu ieteicamo barības daudzumu:</p>
+                <input type="number" id="age" placeholder="Vecums (mēnešos)">
+                <input type="number" id="weight" placeholder="Svars (kg)">
+                <button onclick="calculateFeeding()">Aprēķināt</button>
+                <p id="result"></p>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <h2>Nepieciešamās Uzturvielas</h2>
+            <p>Kaķiem kā gaļēdājiem ir nepieciešams:</p>
+            <ol>
+                <li>Liels olbaltumvielu daudzums</li>
+                <li>Mērens tauku daudzums</li>
+                <li>Minimāls ogļhidrātu daudzums</li>
+                <li>Vitamīni un minerālvielas</li>
+                <li>Taukskābes un aminoskābes</li>
+            </ol>
+            <img src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_3x2.jpg" class="nutrition-chart">
+        </div>
+        <div class="info-block">
+            <h2>Kas Kaķiem ir Kaitīgs</h2>
+            <p>Izvairies dot savam kaķim:</p>
+            <ul>
+                <li>Šokolādi</li>
+                <li>Sīpolus un ķiplokus</li>
+                <li>Alkoholu</li>
+                <li>Kafiju un tēju</li>
+                <li>Avokado</li>
+                <li>Vīnogas un rozīnes</li>
+            </ul>
+        </div>
+        <div class="info-block">
+            <h2>Populārāko Kaķu Barību Salīdzinājums</h2>
+            <table class="food-comparison">
+                <tr>
+                    <th>Zīmols</th>
+                    <th>Olbaltumvielas</th>
+                    <th>Tauki</th>
+                    <th>Šķiedrvielas</th>
+                </tr>
+                <tr>
+                    <td>WHISKAS</td>
+                    <td>32%</td>
+                    <td>10%</td>
+                    <td>5%</td>
+                </tr>
+                <tr>
+                    <td>SHEBA</td>
+                    <td>35%</td>
+                    <td>12%</td>
+                    <td>4%</td>
+                </tr>
+                <tr>
+                    <td>FELIX</td>
+                    <td>30%</td>
+                    <td>11%</td>
+                    <td>6%</td>
+                </tr>
+            </table>
         </div>
     </section>
     <footer class="footer">

@@ -1,59 +1,64 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    display: flex; 
-    justify-content: center;
-  }
-
-  li {
-    float: left;
-    border-right: 1px;
-  }
-
-  li:last-child {
-    border-right: none;
-  }
-
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 21px 16px;
-    text-decoration: none;
-    transition: 0.4s;
-    font-family: Monaco, monospace;
-    font-size: 16px;
-  }
-
-  li a:hover:not(.active) {
-    background-color: #786452;
-    border-radius: 2px;
-  }
-
-  .active {
-    background-color: #786452;
-    border-radius: 2px;
-  }
+/* Globālie stili */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: Monaco, monospace;
   background-color: #f0ead2;
-  margin: 0;
-  padding: 0;
   color: #333;
   line-height: 1.6;
   text-align: center;
 }
 
+/* Navigācija */
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+nav li:last-child {
+  border-right: none;
+}
+
+nav a, .hero .btn {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 21px 16px;
+  text-decoration: none;
+  transition: 0.4s;
+  font-size: 16px;
+}
+
+nav a:hover:not(.active), .active {
+  background-color: #786452;
+  border-radius: 2px;
+}
+
+/* Konteineris */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Virsraksti */
+h1 {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: left;
+}
+
+/* Galvene */
 .header {
   background-color: #ff6b6b;
   color: #fff;
@@ -69,6 +74,7 @@ body {
   font-weight: bold;
 }
 
+/* Heroja sadaļa */
 .hero {
   text-align: center;
   padding: 150px 20px;
@@ -94,9 +100,7 @@ body {
   color: #333;
   padding: 10px 20px;
   font-size: 1rem;
-  text-decoration: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
 }
 
 .hero .btn:hover {
@@ -104,6 +108,7 @@ body {
   color: #fff;
 }
 
+/* Kājene */
 .footer {
   background-color: #333;
   color: #fff;
@@ -120,12 +125,11 @@ body {
   color: #ff6b6b;
 }
 
-
+/* Kolonnas */
 .column {
   float: left;
   width: 33.33%;
 }
-
 
 .row:after {
   content: "";
@@ -133,13 +137,7 @@ body {
   clear: both;
 }
 
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
-
+/* Attēla un teksta konteiners */
 .image-text-container {
   display: flex;
   justify-content: space-between;
@@ -147,7 +145,6 @@ body {
   max-width: 1200px;
   align-items: center;
   margin-top: 10px;
-  padding-top: 0;
 }
 
 .image-text-container img {
@@ -155,44 +152,38 @@ body {
   height: auto;
   margin-right: 100px;
 }
+
 .image-text-container p {
   width: 50%;
   margin: 0;
   text-align: justify;
 }
 
+/* Centrētā sadaļa */
 .centered-section {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 575px;
   padding: 20px;
-  font-family: "Circular Book";
+  font-family: "Circular Book", sans-serif;
   font-weight: 400;
-  letter-spacing: 0px;
-  font-style: normal;
   font-size: large;
 }
+
+/* Produktu sadaļa */
 .products {
   background: white;
   text-align: center;
   width: 100%;
   margin-top: 10px;
-  padding-top: 40px;
-  padding-bottom: 80px;
-
+  padding: 40px 0 80px;
 }
 
 .products-inner {
-  max-width: 1200px; /* Maximum width for content */
-  margin: 0 auto; /* Center the inner content */
-  padding: 20px 20px; /* Optional: Add some horizontal padding */
-}
-
-h2 {
-  font-size: 24px;
-  color: #333;
-  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .product-container {
@@ -200,7 +191,6 @@ h2 {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  
 }
 
 .product {
@@ -240,12 +230,132 @@ h2 {
   text-decoration: none;
   border-radius: 5px;
   font-size: 14px;
-  margin-top: auto; /* Pushes button to the bottom of the product box */
+  margin-top: auto;
 }
 
 .products-title {
   text-align: left;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  margin-left: 25px;
+  margin: 20px 0 10px 25px;
+}
+
+/* Informācijas bloki */
+.food-info, .feeding-info, .amount-info, .important-info {
+  background-color: #f9f3e8;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.food-image img, .feeding-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.food-info, .feeding-info {
+  display: flex;
+  align-items: center;
+}
+
+.food-image, .food-text, .feeding-text {
+  padding: 10px;
+}
+
+.food-image {
+  flex: 1;
+}
+
+.food-text, .feeding-text {
+  flex: 2;
+}
+
+.amount-info ul, .important-info ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.amount-info li, .important-info li {
+  margin-bottom: 5px;
+}
+
+.interactive-tool {
+  background-color: #f9f3e8;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 25px;
+  box-shadow: 0 3px 10px rgba
+}
+
+.interactive-tool h3 {
+  font-family: 'Verdana', sans-serif;
+  color: #786452;
+}
+
+
+.interactive-tool input, .interactive-tool button {
+  margin: 10px 0;
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+}
+
+.nutrition-chart {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  display: block;
+}
+
+.food-comparison {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 25px;
+}
+
+.food-comparison th, .food-comparison td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+}
+
+.food-comparison th {
+  background-color: #f2f2f2;
+  font-family: 'Verdana', sans-serif;
+  color: #786452
+}
+
+.info-block {
+  background-color: #f9f3e8;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.info-block h2 {
+  font-family: 'Verdana', sans-serif;
+  color: #786452;
+  margin-bottom: 20px;
+}
+
+.info-block p, .info-block li {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+.info-block ol, .info-block ul {
+  padding-left: 20px
+}
+
+
+/* Responsīvais dizains */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
