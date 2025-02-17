@@ -1,4 +1,3 @@
-/* Globālie stili */
 body, ul {
   margin: 0;
   padding: 0;
@@ -12,7 +11,7 @@ body {
   text-align: center;
 }
 
-/* Navigācija */
+
 nav ul {
   list-style-type: none;
   overflow: hidden;
@@ -40,14 +39,14 @@ nav a:hover:not(.active), .active {
   border-radius: 2px;
 }
 
-/* Konteineris */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Virsraksti */
+
 h1 {
   margin-bottom: 30px;
 }
@@ -58,7 +57,7 @@ h2 {
   text-align: left;
 }
 
-/* Galvene */
+
 .header {
   background-color: #ff6b6b;
   color: #fff;
@@ -74,7 +73,7 @@ h2 {
   font-weight: bold;
 }
 
-/* Heroja sadaļa */
+
 .hero {
   text-align: center;
   padding: 150px 20px;
@@ -108,7 +107,7 @@ h2 {
   color: #fff;
 }
 
-/* Kājene */
+
 .footer {
   background-color: #333;
   color: #fff;
@@ -125,7 +124,6 @@ h2 {
   color: #ff6b6b;
 }
 
-/* Kolonnas */
 .column {
   float: left;
   width: 33.33%;
@@ -137,7 +135,7 @@ h2 {
   clear: both;
 }
 
-/* Attēla un teksta konteiners */
+
 .image-text-container {
   display: flex;
   justify-content: space-between;
@@ -159,7 +157,10 @@ h2 {
   text-align: justify;
 }
 
-/* Centrētā sadaļa */
+.image-content {
+  flex: 1;
+}
+
 .centered-section {
   display: flex;
   justify-content: center;
@@ -171,7 +172,7 @@ h2 {
   font-size: large;
 }
 
-/* Produktu sadaļa */
+
 .products {
   background: white;
   text-align: center;
@@ -238,7 +239,7 @@ h2 {
   margin: 20px 0 10px 25px;
 }
 
-/* Informācijas bloki */
+
 .food-info, .feeding-info, .amount-info, .important-info {
   background-color: #f9f3e8;
   padding: 20px;
@@ -376,6 +377,7 @@ h2 {
   font-family: 'Verdana', sans-serif;
   color: #786452;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .info-block p, .info-block li {
@@ -388,14 +390,110 @@ h2 {
   list-style-type: disc;
   padding-left: 20px;
   margin-left: 0;
+  text-align: left;
 }
 
 .info-block li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.content-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.content-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.health-calendar {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.health-calendar th, .health-calendar td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.health-calendar th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: relative;
+  display: inline;
+  cursor: help;
+  border-bottom: 1px dotted #786452;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #f9f3e8;
+  color: #333;
+  text-align: left;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -125px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(10px);
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #786452;
+}
+
+.tooltip .tooltiptext::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #786452 transparent transparent transparent;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -9px;
+  border-width: 9px;
+  border-style: solid;
+  border-color: #f9f3e8 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
-/* Responsīvais dizains */
+.tooltip .tooltiptext strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #786452;
+  font-family: 'Verdana', sans-serif;
+}
+
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
