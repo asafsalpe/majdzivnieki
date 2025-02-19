@@ -39,7 +39,15 @@ nav a:hover:not(.active), .active {
   border-radius: 2px;
 }
 
+a {
+  color: #786452;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
+a:hover {
+  color: #333;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -492,6 +500,38 @@ h2 {
   margin-bottom: 5px;
   color: #786452;
   font-family: 'Verdana', sans-serif;
+}
+
+.food-info-container {
+  display: flex;
+  gap: 20px;
+}
+
+.harmful-foods {
+  flex: 1;
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.harmful-foods li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.harmful-foods li:hover {
+  color: #786452;
+}
+
+.food-description {
+  flex: 2;
+  padding: 20px;
+  background-color: #f9f3e8;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {

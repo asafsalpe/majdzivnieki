@@ -75,72 +75,22 @@
         <section class="info-block">
             <h2>Kas Kaķiem ir Kaitīgs</h2>
             <p>Izvairies dot savam kaķim:</p>
-            <ul>
-                <li><span class="tooltip">Šokolādi
-                    <span class="tooltiptext">
-                        <strong>Kāpēc šokolāde ir kaitīga?</strong>
-                        Šokolāde satur teobromīnu un kofeīnu, kas ir toksiski kaķiem. Jo tumšāka šokolāde, jo toksiskāka. Var izraisīt sirds aritmiju, centrālās nervu sistēmas disfunkciju, lēkmes un pat nāvi.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Sīpolus un ķiplokus
-                    <span class="tooltiptext">
-                        <strong>Kāpēc sīpoli un ķiploki ir kaitīgi?</strong>
-                        Tie veicina eritrocītu dalīšanos un izraisa anēmiju. Var izraisīt vājumu, apātiju, apetītes trūkumu un vemšanu. Indīgas ir visas auga daļas.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Vīnogas un rozīnes
-                    <span class="tooltiptext">
-                        <strong>Kāpēc vīnogas un rozīnes ir kaitīgas?</strong>
-                        Izraisa nopietnus nieru bojājumus, kas var novest pie nieru mazspējas. Pat neliels daudzums var būt toksisks. Sākotnējās pazīmes ietver vemšanu un caureju.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Jēlas olas
-                    <span class="tooltiptext">
-                        <strong>Kāpēc jēlas olas ir kaitīgas?</strong>
-                        Rada risku saindēties ar pārtiku. Olas baltumā esošā olbaltumviela avidīns traucē organismam absorbēt B vitamīna biotīnu.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Aknas lielos daudzumos
-                    <span class="tooltiptext">
-                        <strong>Kāpēc aknas lielos daudzumos ir kaitīgas?</strong>
-                        Var izraisīt A vitamīna toksicitāti, kas var ietekmēt kaķa kaulus un izraisīt osteoporozi.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Alkoholu
-                    <span class="tooltiptext">
-                        <strong>Kāpēc alkohols ir kaitīgs?</strong>
-                        Kaķiem alkohola iedarbība ir daudz smagāka nekā cilvēkiem to mazā auguma dēļ. Var izraisīt nopietnus orgānu bojājumus.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Kofeīnu
-                    <span class="tooltiptext">
-                        <strong>Kāpēc kofeīns ir kaitīgs?</strong>
-                        Līdzīgi kā alkohols, kofeīna iedarbība kaķiem ir daudz spēcīgāka nekā cilvēkiem. Var izraisīt nopietnus veselības traucējumus.
-                    </span>
-                    </span>
-                </li>
-                
-                <li><span class="tooltip">Pienu
-                    <span class="tooltiptext">
-                        <strong>Kāpēc piens ir kaitīgs?</strong>
-                        Pieaugušiem kaķiem bieži ir laktozes nepanesība. Piena uzņemšana var radīt gremošanas traucējumus un diskomfortu.
-                    </span>
-                    </span>
-                </li>
-                
-            </ul>
+            <div class="food-info-container">
+                <ul class="harmful-foods">
+                  <li data-info="chocolate">Šokolāde</li>
+                  <li data-info="onions">Sīpoli un ķiploki</li>
+                  <li data-info="grapes">Vīnogas un rozīnes</li>
+                  <li data-info="eggs">Jēlas olas</li>
+                  <li data-info="liver">Aknas lielos daudzumos</li>
+                  <li data-info="alcohol">Alkohols</li>
+                  <li data-info="caffeine">Kofeīns</li>
+                  <li data-info="milk">Piens</li>
+                </ul>
+                <div id="food-description" class="food-description hidden">
+                  <h3>Izvēlieties ēdienu, lai uzzinātu vairāk</h3>
+                  <p>Šeit parādīsies informācija par izvēlēto ēdienu.</p>
+                </div>
+              </div>              
         </section>
         <section class="info-block">
             <h2>Populārāko Kaķu Barību Salīdzinājums</h2>
@@ -152,19 +102,19 @@
                     <th>Šķiedrvielas</th>
                 </tr>
                 <tr>
-                    <td>WHISKAS</td>
+                    <td><a href="https://www.whiskas.lv/" target="_blank">WHISKAS</a></td>
                     <td>32%</td>
                     <td>10%</td>
                     <td>5%</td>
                 </tr>
                 <tr>
-                    <td>SHEBA</td>
+                    <td><a href="https://www.sheba.com/" target="_blank">SHEBA</a></td>
                     <td>35%</td>
                     <td>12%</td>
                     <td>4%</td>
                 </tr>
                 <tr>
-                    <td>FELIX</td>
+                    <td><a href="https://www.purina.co.uk/brands/felix" target="_blank">FELIX</a></td>
                     <td>30%</td>
                     <td>11%</td>
                     <td>6%</td>
@@ -175,5 +125,6 @@
     <footer class="footer">
         <p>&copy; 2025 Murrātava. Veidots ar ❤️ kaķiem un viņu saimniekiem. <a href="contact.html">Sazinies ar mums</a></p>
     </footer>
+    <script src="edieni.js"></script>
 </body>
 </html>
