@@ -550,6 +550,22 @@ h2 {
   display: none;
 }
 
+.harmful-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.harmful-image img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.harmful-text {
+  flex: 1;
+}
+
 @media screen and (max-width: 768px) {
 
   .container {

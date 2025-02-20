@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
-    <title>Kaķa Barošana un Uzturs</title>
+    <title>Kaķa barošana un uzturs</title>
     <script>
         function calculateFeeding() {
             var age = document.getElementById('age').value;
@@ -34,37 +34,57 @@
     </header>
     
     <section class="container">
-        <h1>Kaķa Barošana un Uzturs</h1>
-        <section class="info-block">
-            <h2>Barošanas Biežums</h2>
-            <p>Kaķa barošanas biežums ir atkarīgs no vairākiem faktoriem:</p>
-            <ul>
-                <li><strong>Kaķēni (līdz 6 mēnešiem):</strong> 3-4 reizes dienā</li>
-                <li><strong>Pieauguši kaķi:</strong> 2-3 reizes dienā</li>
-                <li><strong>Gados vecāki kaķi:</strong> 2 reizes dienā, pielāgojot porcijas</li>
-            </ul>
-            <div class = "interactive-tool">
-                <h3>Barošanas kalkulators</h3>
-                <p style="text-align: center;">Ievadiet sava kaķa vecumu un svaru, lai uzzinātu ieteicamo barības daudzumu:</p>
-                <input type="number" id="age" placeholder="Vecums (mēnešos)">
-                <input type="number" id="weight" placeholder="Svars (kg)">
-                <button onclick="calculateFeeding()">Aprēķināt</button>
-                <p id="result"></p>
-            </div>
-        </section>
+        <h1>Kaķa barošana un uzturs</h1>
+        
 
         <section class="info-block">
-            <h2>Nepieciešamās Uzturvielas</h2>
+            <h2>Nepieciešamās uzturvielas</h2>
             <div class="nutrition-container">
                 <div class="nutrition-text">
                     <p>Kaķiem kā gaļēdājiem ir nepieciešams:</p>
                     <ol>
-                        <li>Liels olbaltumvielu daudzums</li>
-                        <li>Mērens tauku daudzums</li>
-                        <li>Minimāls ogļhidrātu daudzums</li>
-                        <li>Tīrs, svaigs ūdens</li>
-                        <li>Vitamīni un minerālvielas</li>
-                        <li>Taukskābes un aminoskābes</li>
+                        <li><span class="tooltip">Liels olbaltumvielu daudzums
+                            <span class="tooltiptext">
+                                <strong>?</strong>
+                                teksts
+                            </span>
+                            </span>
+                        </li>
+                        <li><span class="tooltip">Mērens tauku daudzums
+                            <span class="tooltiptext">
+                                <strong>?</strong>
+                                teksts
+                            </span>
+                            </span>
+                        </li>
+                        <li><span class="tooltip">Minimāls ogļhidrātu daudzums
+                            <span class="tooltiptext">
+                                <strong>?</strong>
+                                teksts
+                            </span>
+                            </span>
+                        </li>
+                        <li><span class="tooltip">Tīrs, svaigs ūdens
+                            <span class="tooltiptext">
+                                <strong>?</strong>
+                                teksts
+                            </span>
+                            </span>
+                        </li>
+                        <li><span class="tooltip">Vitamīni un minerālvielas
+                            <span class="tooltiptext">
+                                <strong>?</strong>
+                                teksts
+                            </span>
+                            </span>
+                        </li>
+                        <li><span class="tooltip">Taukskābes un aminoskābes
+                            <span class="tooltiptext">
+                                <strong>?</strong>
+                                teksts
+                            </span>
+                            </span>
+                        </li>
                     </ol>
                 </div>
                 <div class="nutrition-image">
@@ -73,24 +93,80 @@
             </div>
         </section>
         <section class="info-block">
-            <h2>Kas Kaķiem ir Kaitīgs</h2>
-            <p>Izvairies dot savam kaķim:</p>
-            <div class="food-info-container">
-                <ul class="harmful-foods">
-                  <li data-info="chocolate">Šokolāde</li>
-                  <li data-info="onions">Sīpoli un ķiploki</li>
-                  <li data-info="grapes">Vīnogas un rozīnes</li>
-                  <li data-info="eggs">Jēlas olas</li>
-                  <li data-info="liver">Aknas lielos daudzumos</li>
-                  <li data-info="alcohol">Alkohols</li>
-                  <li data-info="caffeine">Kofeīns</li>
-                  <li data-info="milk">Piens</li>
-                </ul>
-                <div id="food-description" class="food-description hidden">
-                  <h3>Izvēlieties ēdienu, lai uzzinātu vairāk</h3>
-                  <p>Šeit parādīsies informācija par izvēlēto ēdienu.</p>
+            <h2>Kas kaķiem ir kaitīgs</h2>
+            <div class="harmful-container">
+                <div class="harmful-text">
+                    <p>Izvairies dot savam kaķim:</p>
+                        <ul>
+                            <li><span class="tooltip">Šokolādi
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc šokolāde ir kaitīga?</strong>
+                                    Šokolāde satur teobromīnu un kofeīnu, kas ir toksiski kaķiem. Jo tumšāka šokolāde, jo toksiskāka. Var izraisīt sirds aritmiju, centrālās nervu sistēmas disfunkciju, lēkmes un pat nāvi.
+                                </span>
+                                </span>
+                            </li>
+                
+                            <li><span class="tooltip">Sīpolus un ķiplokus
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc sīpoli un ķiploki ir kaitīgi?</strong>
+                                    Tie veicina eritrocītu dalīšanos un izraisa anēmiju. Var izraisīt vājumu, apātiju, apetītes trūkumu un vemšanu. Indīgas ir visas auga daļas.
+                                </span>
+                                </span>
+                            </li>
+                    
+                            <li><span class="tooltip">Vīnogas un rozīnes
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc vīnogas un rozīnes ir kaitīgas?</strong>
+                                    Izraisa nopietnus nieru bojājumus, kas var novest pie nieru mazspējas. Pat neliels daudzums var būt toksisks. Sākotnējās pazīmes ietver vemšanu un caureju.
+                                </span>
+                                </span>
+                            </li>
+                    
+                            <li><span class="tooltip">Jēlas olas
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc jēlas olas ir kaitīgas?</strong>
+                                    Rada risku saindēties ar pārtiku. Olas baltumā esošā olbaltumviela avidīns traucē organismam absorbēt B vitamīna biotīnu.
+                                </span>
+                                </span>
+                            </li>
+                    
+                            <li><span class="tooltip">Aknas lielos daudzumos
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc aknas lielos daudzumos ir kaitīgas?</strong>
+                                    Var izraisīt A vitamīna toksicitāti, kas var ietekmēt kaķa kaulus un izraisīt osteoporozi.
+                                </span>
+                                </span>
+                            </li>
+                    
+                            <li><span class="tooltip">Alkoholu
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc alkohols ir kaitīgs?</strong>
+                                    Kaķiem alkohola iedarbība ir daudz smagāka nekā cilvēkiem to mazā auguma dēļ. Var izraisīt nopietnus orgānu bojājumus.
+                                </span>
+                                </span>
+                            </li>
+                    
+                            <li><span class="tooltip">Kofeīnu
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc kofeīns ir kaitīgs?</strong>
+                                    Līdzīgi kā alkohols, kofeīna iedarbība kaķiem ir daudz spēcīgāka nekā cilvēkiem. Var izraisīt nopietnus veselības traucējumus.
+                                </span>
+                                </span>
+                            </li>
+                
+                            <li><span class="tooltip">Pienu
+                                <span class="tooltiptext">
+                                    <strong>Kāpēc piens ir kaitīgs?</strong>
+                                    Pieaugušiem kaķiem bieži ir laktozes nepanesība. Piena uzņemšana var radīt gremošanas traucējumus un diskomfortu.
+                                </span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                <div class="harmful-image">
+                    <img src="https://rawznaturalpetfood.com/wp-content/uploads/11-foods-Blog-1.jpg" alt="Harmful food">
                 </div>
-              </div>              
+            </div>              
         </section>
         <section class="info-block">
             <h2>Populārāko Kaķu Barību Salīdzinājums</h2>
@@ -114,12 +190,29 @@
                     <td>4%</td>
                 </tr>
                 <tr>
-                    <td><a href="https://www.purina.co.uk/brands/felix" target="_blank">FELIX</a></td>
+                    <td><a href="https://www.purina.lv/" target="_blank">PURINA</a></td>
                     <td>30%</td>
                     <td>11%</td>
                     <td>6%</td>
                 </tr>
             </table>
+        </section>
+        <section class="info-block">
+            <h2>Barošanas Biežums</h2>
+            <p>Kaķa barošanas biežums ir atkarīgs no vairākiem faktoriem:</p>
+            <ul>
+                <li><strong>Kaķēni (līdz 6 mēnešiem):</strong> 3-4 reizes dienā</li>
+                <li><strong>Pieauguši kaķi:</strong> 2-3 reizes dienā</li>
+                <li><strong>Gados vecāki kaķi:</strong> 2 reizes dienā, pielāgojot porcijas</li>
+            </ul>
+            <div class = "interactive-tool">
+                <h3>Barošanas kalkulators</h3>
+                <p style="text-align: center;">Ievadiet sava kaķa vecumu un svaru, lai uzzinātu ieteicamo barības daudzumu:</p>
+                <input type="number" id="age" placeholder="Vecums (mēnešos)">
+                <input type="number" id="weight" placeholder="Svars (kg)">
+                <button onclick="calculateFeeding()">Aprēķināt</button>
+                <p id="result"></p>
+            </div>
         </section>
     </section>
     <footer class="footer">

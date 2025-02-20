@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
     <title>Iegāde</title>
+    <style>
+        /* Style for the map container */
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -14,15 +25,15 @@
                 <li><a href="barosana.html">Uzturs</a></li>
                 <li><a href="veseliba.html">Veselība</a></li>
                 <li><a href="apmaciba.html">Apmācība</a></li>
-                <li><a href="rupes.html">Rūpēšanās</a></li>                    
-                <li><a  class = "active" href="iegade.html">Iegāde</a></li>
+                <li><a href="rupes.html">Rūpēšanās</a></li>
+                <li><a class="active" href="iegade.html">Iegāde</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <section class="container">
         <h1>Kaķa Iegāde</h1>
-        
+
         <section class="info-block">
             <h2>Kur Iegādāties Kaķi</h2>
             <div class="content-container">
@@ -35,11 +46,12 @@
                     </ul>
                 </div>
                 <div class="image-content">
-                    <img src="https://www.awanj.org/wp-content/uploads/2022/12/Little-Orphan-Annie.jpg" alt="Kaķa adopcija" class="content-image">
+                    <img src="https://www.awanj.org/wp-content/uploads/2022/12/Little-Orphan-Annie.jpg"
+                        alt="Kaķa adopcija" class="content-image">
                 </div>
             </div>
         </section>
-    
+
         <section class="info-block">
             <h2>Ko Ņemt Vērā Pirms Kaķa Iegādes</h2>
             <ol>
@@ -50,7 +62,7 @@
                 <li>Ilgtermiņš</li>
             </ol>
         </section>
-    
+
         <section class="info-block">
             <h2>Nepieciešamie Piederumi Jaunajam Kaķim</h2>
             <ul>
@@ -62,11 +74,82 @@
                 <li>Transportēšanas būris</li>
             </ul>
         </section>
+        <section class="info-block">
+            <h2>Kaķu patversmes Latvijā</h2>
+            <div id="map"></div> <!-- Map Container -->
+        </section>
     </section>
-    
+
     <footer class="footer">
         <p>&copy; 2025 Murrātava. Veidots ar ❤️ kaķiem un viņu saimniekiem. <a href="contact.html">Sazinies ar mums</a></p>
     </footer>
+
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 56.8796,
+                    lng: 24.6032
+                }, // Latvia Coordinates
+                zoom: 7,
+            });
+
+            //Shelter Locations
+            const shelters = [
+             {
+                 name: "Dzīvnieku aizsardzības biedrība",
+                 lat: 56.9496,
+                 lng: 24.1052,
+                 address: "Laktas iela 8, Rīga, LV-1016, Latvija"
+             },
+             {
+                 name: "Otrā māja",
+                 lat: 57.4294,
+                 lng: 24.9007,
+                 address: "Saulkrasti, Saulkrastu pilsēta, LV-2160"
+             },
+             {
+                 name: "Ķepu-Ķepā",
+                 lat: 56.6564,
+                 lng: 23.7213,
+                 address: "Ventspils novads, Tārgales pagasts, Īves, LV-3601"
+             },
+             {
+                 name: "Dzīvnieku patversme 'Mežvairogi'",
+                 lat: 56.8200069304069,
+                 lng: 24.3023461746144,
+                 address: "Ķekavas pagasts, Ķekavas novads, LV-2123"
+             }
+             ,
+             {
+                 name: "Labās mājas",
+                 lat: 56.8200069304069,
+                 lng: 24.3023461746144,
+                 address: "Mežapurva iela 2, Vidzemes priekšpilsēta, Rīga, LV-1064"
+             }
+         ];
+
+            // Add Markers
+            shelters.forEach(shelter => {
+             const marker = new google.maps.Marker({
+                 position: { lat: shelter.lat, lng: shelter.lng },
+                 map: map,
+                 title: shelter.name,
+             });
+
+             // Info Window
+             const infowindow = new google.maps.InfoWindow({
+                 content: `<div><strong>${shelter.name}</strong><br>${shelter.address}</div>`,
+             });
+
+             marker.addListener("click", () => {
+                 infowindow.open(map, marker);
+             });
+         });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK7jfv7uPW9uPXkq313JCDEeNJrS2TP4E&callback=initMap"></script>
     <script src="edieni.js"></script>
 </body>
+
 </html>
