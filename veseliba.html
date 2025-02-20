@@ -72,10 +72,158 @@
                 </tr>
             </table>
         </section>
+        <section class="info-block">
+            <h2>Veterinārās klīnikas Latvijā</h2>
+            <div id="map"></div> <!-- Map Container -->
+        </section>
     </section>
     <footer class="footer">
         <p>&copy; 2025 Murrātava. Veidots ar ❤️ kaķiem un viņu saimniekiem. <a href="contact.html">Sazinies ar mums</a></p>
     </footer>
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 56.8796,
+                    lng: 24.6032
+                }, // Latvia Coordinates
+                zoom: 7,
+            });
+
+            //Shelter Locations
+            const shelters = [
+             {
+                 name: "Dzīvnieku patversme 'Mežvairogi'",
+                 lat: 56.811558153375714,
+                 lng: 24.299597420250716,
+                 address: "Ķekavas pagasts, Ķekavas novads, LV-2123"
+             }
+             ,
+             {
+                 name: "Labās mājas",
+                 lat: 56.969375448322964,
+                 lng: 24.254783036914557,
+                 address: "Mežapurva iela 2, Vidzemes priekšpilsēta, Rīga, LV-1064"
+             },
+             {
+                 name: "Rembo",
+                 lat: 57.28639822005833,  
+                 lng: 21.513872659464532,
+                 address: "Sprīdīši, Ventspils novads, Vārves pagasts"
+             },
+
+             {
+                 name: "Astes un Ūsas",
+                 lat: 57.43466019858309, 
+                 lng: 27.04334022359924,
+                 address: "Ošu iela 5a, Alūksne, Alūksne pilsēta, Alūksnes novads, LV-4301"
+             },
+             {
+                 name: "Dzīvnieku patversme un adopcija Valmierā",
+                 lat: 57.54025461757308,  
+                 lng: 25.393884757300373,
+                 address: "Mālu iela 5, Valmiera, LV-4201"
+             },
+             {
+                 name: "Otrā māja dzīvniekiem",
+                 lat: 55.758929966311115,  
+                 lng: 26.56759050132386,
+                 address: "Dzīvnieku patversme OTRĀ MĀJA Vēži-1, Demenes pagasts, Augšdaugavas novads, LV-5442"
+             },
+             {
+                 name: "Lācīši",
+                 lat: 57.3223800784327, 
+                 lng: 25.257143435468883,
+                 address: "Krasta iela 1, Cēsis, Cēsu pilsēta, Cēsu novads, LV-4101"
+             },
+             {
+                 name: "Daugavpils dzivnieku patversme",
+                 lat: 55.89621113758875,
+                 lng: 26.53050278885951,
+                 address: "Piekrastes iela 2, Daugavpils, LV-5422"
+             },
+             {
+                 name: "ĶEPU-ĶEPĀ",
+                 lat: 56.58150193240545, 
+                 lng: 24.03705523057148,
+                 address: "Rēvici, Ozolnieku novads,Salgales pagasts, LV-3045"
+             },
+             {
+                 name: "Jēkabpils pilsētas dzīvnieku patversme",
+                 lat: 56.52347490837735, 
+                 lng: 25.86460600320876,
+                 address: "Zvaigžņu iela 1A, Jēkabpils, LV-5202"
+             },
+             {
+                 name: "Dzīvnieku patversme 'Ausma'",
+                 lat: 57.25961469440595,  
+                 lng: 22.584250140805462,
+                 address: "Krišjāņa Valdemāra iela 75, Talsi, Talsu pilsēta, Talsu novads, LV-3201"
+             },
+             {
+                 name: "Dzīvnieku draugs, Dzīvnieku patversme",
+                 lat: 56.941283751094005,   
+                 lng: 24.04920295998905,
+                 address: "Fridriha Candera iela 4, Zemgales priekšpilsēta, Rīga, LV-1046"
+             },
+             {
+                 name: "Mīļās ķepiņas",
+                 lat: 56.97246475437576,
+                 lng: 21.956353429862897,
+                 address: "Vakara iela 5, Kuldīga, Kuldīgas pilsēta, Kuldīgas novads, LV-3301"
+             },
+             {
+                 name: "Labās mājas",
+                 lat: 56.96938101570328,  
+                 lng: 24.2547835421542,
+                 address: "Mežapurva iela 2, Vidzemes priekšpilsēta, Rīga, LV-1064"
+             },
+             {
+                 name: "Ulubele dzīvnieku patversme Līči",
+                 lat: 56.95480906477075,   
+                 lng: 24.348039740642115,
+                 address: "Ozolaine, Stopiņu pagasts, Ropažu novads, LV-2118"
+             },
+             {
+                 name: "Dzīvnieku aizsardzības grupa",
+                 lat: 56.520091419596845,
+                 lng: 21.032305527367217,
+                 address: "Ezermalas iela 11, Liepāja, LV-3401"
+             },
+             {
+                 name: "Madonas dzīvnieku patversme 'Lazdonītis'",
+                 lat: 56.81502876946313,
+                 lng: 26.244197609965497,
+                 address: "Praulienas pagasts, Madonas novads, LV-4824"
+             },
+             {
+                 name: "Lauvas sirds",
+                 lat: 56.5410921018, 
+                 lng: 21.077790550441907,
+                 address: "14. novembra bulvāris 31/33, Liepāja, LV-3414"
+             }
+         ];
+
+            // Add Markers
+            shelters.forEach(shelter => {
+             const marker = new google.maps.Marker({
+                 position: { lat: shelter.lat, lng: shelter.lng },
+                 map: map,
+                 title: shelter.name,
+             });
+
+             // Info Window
+             const infowindow = new google.maps.InfoWindow({
+                 content: `<div><strong>${shelter.name}</strong><br>${shelter.address}</div>`,
+             });
+
+             marker.addListener("click", () => {
+                 infowindow.open(map, marker);
+             });
+         });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK7jfv7uPW9uPXkq313JCDEeNJrS2TP4E&callback=initMap"></script>
     <script src="edieni.js"></script>
 </body>
 </html>
