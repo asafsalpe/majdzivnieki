@@ -1,21 +1,30 @@
-body, ul {
+:root {
+  --primary-color: #786452;
+  --secondary-color: #f0ead2;
+  --accent-color: #ffd700;
+  --highlight-color: #ff6b6b;
+  --text-color: #333;
+  --background-color: #f0ead2;
+}
+
+body,
+ul {
   margin: 0;
   padding: 0;
 }
 
 body {
   font-family: Monaco, monospace;
-  background-color: #f0ead2;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
   text-align: center;
 }
 
-
 nav ul {
   list-style-type: none;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--text-color);
   display: flex;
   justify-content: center;
 }
@@ -24,7 +33,8 @@ nav li:last-child {
   border-right: none;
 }
 
-nav a, .hero .btn {
+nav a,
+.hero .btn {
   display: block;
   color: white;
   text-align: center;
@@ -34,40 +44,39 @@ nav a, .hero .btn {
   font-size: 16px;
 }
 
-nav a:hover:not(.active), .active {
-  background-color: #786452;
+nav a:hover:not(.active),
+.active {
+  background-color: var(--primary-color);
   border-radius: 2px;
 }
 
 a {
-  color: #786452;
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #333;
+  color: var(--text-color);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-
-
 h1 {
   margin-bottom: 30px;
 }
 
 h2 {
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
   text-align: left;
 }
 
-
 .header {
-  background-color: #ff6b6b;
+  background-color: var(--highlight-color);
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -81,11 +90,10 @@ h2 {
   font-weight: bold;
 }
 
-
 .hero {
   text-align: center;
   padding: 150px 20px;
-  background-image: url('https://www.whiskas.co.uk/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf5651/files/2024-12/desktop-17-Kitten-development-When-does-a-kitten-become-a-cat.jpg');
+  background-image: url("https://www.whiskas.co.uk/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf5651/files/2024-12/desktop-17-Kitten-development-When-does-a-kitten-become-a-cat.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -103,33 +111,32 @@ h2 {
 }
 
 .hero .btn {
-  background-color: #ffd700;
-  color: #333;
+  background-color: var(--accent-color);
+  color: var(--text-color);
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 5px;
 }
 
 .hero .btn:hover {
-  background-color: #ff6b6b;
+  background-color: var(--highlight-color);
   color: #fff;
 }
 
-
 .footer {
-  background-color: #333;
+  background-color: var(--text-color);
   color: #fff;
   text-align: center;
   padding: 8px 0;
 }
 
 .footer a {
-  color: #ffd700;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
 .footer a:hover {
-  color: #ff6b6b;
+  color: var(--highlight-color);
 }
 
 .column {
@@ -143,11 +150,9 @@ h2 {
   clear: both;
 }
 
-
 .image-text-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   max-width: 1200px;
   align-items: center;
   margin-top: 10px;
@@ -180,7 +185,6 @@ h2 {
   font-size: large;
 }
 
-
 .products {
   background: white;
   text-align: center;
@@ -203,7 +207,7 @@ h2 {
 }
 
 .product {
-  background: #f0ead2;
+  background: var(--secondary-color);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -247,8 +251,10 @@ h2 {
   margin: 20px 0 10px 25px;
 }
 
-
-.food-info, .feeding-info, .amount-info, .important-info {
+.food-info,
+.feeding-info,
+.amount-info,
+.important-info {
   background-color: #f9f3e8;
   padding: 20px;
   margin-bottom: 20px;
@@ -257,19 +263,23 @@ h2 {
   text-align: left;
 }
 
-.food-image img, .feeding-image img {
+.food-image img,
+.feeding-image img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
   margin-top: 10px;
 }
 
-.food-info, .feeding-info {
+.food-info,
+.feeding-info {
   display: flex;
   align-items: center;
 }
 
-.food-image, .food-text, .feeding-text {
+.food-image,
+.food-text,
+.feeding-text {
   padding: 10px;
 }
 
@@ -277,17 +287,20 @@ h2 {
   flex: 1;
 }
 
-.food-text, .feeding-text {
+.food-text,
+.feeding-text {
   flex: 2;
 }
 
-.amount-info ul, .important-info ul {
+.amount-info ul,
+.important-info ul {
   list-style-type: disc;
   margin-left: 20px;
   padding: 0;
 }
 
-.amount-info li, .important-info li {
+.amount-info li,
+.important-info li {
   margin-bottom: 5px;
 }
 
@@ -296,26 +309,26 @@ h2 {
   padding: 25px;
   border-radius: 10px;
   margin-top: 25px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .interactive-tool h3 {
-  font-family: 'Verdana', sans-serif;
-  color: #786452;
+  font-family: "Verdana", sans-serif;
+  color: var(--primary-color);
   margin-bottom: 15px;
 }
 
-
-.interactive-tool input, .interactive-tool button {
+.interactive-tool input,
+.interactive-tool button {
   margin: 10px 0;
   padding: 10px;
-  font-family: 'Arial', sans-serif;
-  border: 1px solid #786452;
+  font-family: "Arial", sans-serif;
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
 }
 
 .interactive-tool button {
-  background-color: #786452;
+  background-color: var(--primary-color);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -360,17 +373,18 @@ h2 {
   margin-top: 25px;
 }
 
-.food-comparison th, .food-comparison td {
+.food-comparison th,
+.food-comparison td {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: left;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .food-comparison th {
   background-color: #f2f2f2;
-  font-family: 'Verdana', sans-serif;
-  color: #786452
+  font-family: "Verdana", sans-serif;
+  color: var(--primary-color);
 }
 
 .info-block {
@@ -378,23 +392,25 @@ h2 {
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 30px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .info-block h2 {
-  font-family: 'Verdana', sans-serif;
-  color: #786452;
+  font-family: "Verdana", sans-serif;
+  color: var(--primary-color);
   margin-bottom: 20px;
   text-align: left;
 }
 
-.info-block p, .info-block li {
-  font-family: 'Arial', sans-serif;
+.info-block p,
+.info-block li {
+  font-family: "Arial", sans-serif;
   line-height: 1.6;
   text-align: left;
 }
 
-.info-block ol, .info-block ul {
+.info-block ol,
+.info-block ul {
   list-style-type: disc;
   padding-left: 20px;
   margin-left: 0;
@@ -426,7 +442,8 @@ h2 {
   margin-top: 20px;
 }
 
-.health-calendar th, .health-calendar td {
+.health-calendar th,
+.health-calendar td {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: left;
@@ -441,14 +458,14 @@ h2 {
   position: relative;
   display: inline;
   cursor: help;
-  border-bottom: 1px dotted #786452;
+  border-bottom: 1px dotted var(--primary-color);
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 250px;
   background-color: #f9f3e8;
-  color: #333;
+  color: var(--text-color);
   text-align: left;
   border-radius: 10px;
   padding: 15px;
@@ -461,9 +478,9 @@ h2 {
   transition: opacity 0.3s, transform 0.3s;
   transform: translateY(10px);
   font-size: 14px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #786452;
+  border: 1px solid var(--primary-color);
 }
 
 .tooltip .tooltiptext::before {
@@ -474,7 +491,7 @@ h2 {
   margin-left: -10px;
   border-width: 10px;
   border-style: solid;
-  border-color: #786452 transparent transparent transparent;
+  border-color: var(--primary-color) transparent transparent transparent;
 }
 
 .tooltip .tooltiptext::after {
@@ -494,12 +511,11 @@ h2 {
   transform: translateY(0);
 }
 
-
 .tooltip .tooltiptext strong {
   display: block;
   margin-bottom: 5px;
-  color: #786452;
-  font-family: 'Verdana', sans-serif;
+  color: var(--primary-color);
+  font-family: "Verdana", sans-serif;
 }
 
 .food-info-container {
@@ -519,7 +535,7 @@ h2 {
 }
 
 .harmful-foods li:hover {
-  color: #786452;
+  color: var(--primary-color);
 }
 
 .food-description {
@@ -527,15 +543,79 @@ h2 {
   padding: 20px;
   background-color: #f9f3e8;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hidden {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
-  .column {
+@media screen and (max-width: 768px) {
+
+  .container {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 80px 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .image-text-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-text-container img {
+    width: 80%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .image-text-container p {
     width: 100%;
+    text-align: left;
+  }
+
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    max-width: 80%;
+  }
+
+  .food-info-container {
+    flex-direction: column;
+  }
+
+  .harmful-foods,
+  .food-description {
+    width: 100%;
+  }
+
+  .info-block {
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav li {
+    border-bottom: 1px solid #555;
+  }
+
+  nav a {
+    padding: 15px;
   }
 }
