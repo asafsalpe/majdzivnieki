@@ -25,15 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     alcohol: {
       title: "Kāpēc alkohols ir kaitīgs?",
-      description: "Kaķiem alkohola iedarbība ir daudz smagāka nekā cilvēkiem to mazā auguma dēļ. Var izraisīt nopietnus orgānu bojājumus."
+      description: "Kaķiem alkohola iedarbība ir daudz smagāka nekā cilvēkiem to mazā auguma dēļ, pat tējkarote spēj būtiski ietekmēt kaķa veselību. Var izraisīt nopietnus orgānu bojājumus, īpaši nierēs un smadzenēsas."
     },
     caffeine: {
       title: "Kāpēc kofeīns ir kaitīgs?",
-      description: "Līdzīgi kā alkohols, kofeīna iedarbība kaķiem ir daudz spēcīgāka nekā cilvēkiem. Var izraisīt nopietnus veselības traucējumus."
+      description: "Līdzīgi kā alkohols, kofeīna iedarbība kaķiem ir daudz spēcīgāka nekā cilvēkiem. Var izraisīt nopietnus veselības traucējumus - ātru elpošanu, sirdsklauves un muskuļu trīci."
     },
     milk: {
       title: "Kāpēc piens ir kaitīgs?",
-      description: "Pieaugušiem kaķiem bieži ir laktozes nepanesība. Piena uzņemšana var radīt gremošanas traucējumus un diskomfortu."
+      description: "Pieaugušiem kaķiem bieži ir laktozes nepanesība. Piena uzņemšana var radīt gremošanas traucējumus, vemšanu, caureju un vispārīgu diskomfortu."
     }
   };
 
