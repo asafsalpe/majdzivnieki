@@ -11,9 +11,9 @@
             var weight = document.getElementById('weight').value;
             var result = "";
             if (age <=6) {
-                result = "Jūsu kaķēnam ieteicams ēst 3-4 reizes dienā, aptuveni " + (weight * 50) + " gramus dienā.";
+                result = "Jūsu kaķēnam ieteicams ēst 4-5 reizes dienā, aptuveni " + (weight * 50) + " gramus dienā.";
             } else {
-                result = "Jūsu kaķēnam ieteicams ēst 2-3 reizes dienām, aptuveni " + (weight * 30) + " gramus dienā.";
+                result = "Jūsu kaķēnam ieteicams ēst 2-3 reizes dienā, aptuveni " + (weight * 30) + " gramus dienā.";
             }
             document.getElementById('result').innerHTML = result;
         }
@@ -171,7 +171,7 @@
             </div>              
         </section>
         <section class="info-block">
-            <h2>Populārāko Kaķu Barību Salīdzinājums</h2>
+            <h2>Populārāko kaķu barību salīdzinājums</h2>
             <table class="food-comparison">
                 <tr>
                     <th>Zīmols</th>
@@ -200,12 +200,11 @@
             </table>
         </section>
         <section class="info-block">
-            <h2>Barošanas Biežums</h2>
-            <p>Kaķa barošanas biežums ir atkarīgs no vairākiem faktoriem, piemēram, vecuma, veselības stāvokļa un fiziskās aktivitātes līmeņa. Kaķēni aug strauji, un viņiem nepieciešama biežāka barošana, parasti četras līdz piecas reizes dienā. Pieaugot, viņu ēdienreižu skaits samazinās, un pieaugušam kaķim parasti pietiek ar divām līdz trīs ēdienreizēm dienā. Tāpat kaķiem ar veselības problēmām vai īpašām uztura vajadzībām var būt nepieciešama speciāla barība un biežāka barošana, ko nosaka veterinārārsts. (links uz veterinārajām klīnikām) Fiziski aktīvi kaķi, kas daudz skraida un rotaļājas, patērē vairāk enerģijas un attiecīgi arī vairāk barības nekā mierīgāki, mazkustīgāki kaķi.</p>
+            <h2 class="padd">Barošanas biežums</h2>
+            <p class="padd">Kaķa barošanas biežums ir atkarīgs no vairākiem faktoriem, piemēram, vecuma, veselības stāvokļa un fiziskās aktivitātes līmeņa. Kaķēni aug strauji, un viņiem nepieciešama biežāka barošana, parasti četras līdz piecas reizes dienā. Pieaugot, viņu ēdienreižu skaits samazinās, un pieaugušam kaķim parasti pietiek ar divām līdz trīs ēdienreizēm dienā. Tāpat kaķiem ar veselības problēmām vai īpašām uztura vajadzībām var būt nepieciešama speciāla barība un biežāka barošana, ko nosaka veterinārārsts. (links uz veterinārajām klīnikām) Fiziski aktīvi kaķi, kas daudz skraida un rotaļājas, patērē vairāk enerģijas un attiecīgi arī vairāk barības nekā mierīgāki, mazkustīgāki kaķi.</p>
             <ul>
-                <li><strong>Kaķēni (līdz 6 mēnešiem):</strong> 3-4 reizes dienā</li>
+                <li><strong>Kaķēni (līdz 6 mēnešiem):</strong> 4-5 reizes dienā</li>
                 <li><strong>Pieauguši kaķi:</strong> 2-3 reizes dienā</li>
-                <li><strong>Gados vecāki kaķi:</strong> 2 reizes dienā, pielāgojot porcijas</li>
             </ul>
             <div class = "interactive-tool">
                 <h3>Barošanas kalkulators</h3>
