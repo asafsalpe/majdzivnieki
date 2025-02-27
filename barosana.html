@@ -100,7 +100,7 @@
                 <div class="harmful-text">
                     <p>Bieži vien vēlamies dalīties ar savu māluli un piedāvāt viņam to pašu ēdienu, ko ēdam mēs, taču ne vienmēr tas ir droši. Daudzi pārtikas produkti, kas ikdienā ir droši cilvēkiem, kaķiem var būt ļoti bīstami. Izvairies dot savam kaķim:</p>
                         <ul>
-                            <li><span class="tooltip">Šokolādi
+                            <li data-image="chocolate.png"><span class="tooltip">Šokolādi
                                 <span class="tooltiptext">
                                     <strong>Kāpēc šokolāde ir kaitīga?</strong>
                                     Šokolāde satur teobromīnu un kofeīnu, kas ir toksiski kaķiem. Jo tumšāka šokolāde, jo toksiskāka. Var izraisīt sirds aritmiju, centrālās nervu sistēmas disfunkciju, lēkmes un pat nāvi.
@@ -108,7 +108,7 @@
                                 </span>
                             </li>
                 
-                            <li><span class="tooltip">Sīpolus un ķiplokus
+                            <li data-image="onion.png"><span class="tooltip">Sīpolus un ķiplokus
                                 <span class="tooltiptext">
                                     <strong>Kāpēc sīpoli un ķiploki ir kaitīgi?</strong>
                                     Tie veicina eritrocītu dalīšanos un izraisa anēmiju. Var izraisīt vājumu, apātiju, apetītes trūkumu un vemšanu. Indīgas ir visas auga daļas.
@@ -116,7 +116,7 @@
                                 </span>
                             </li>
                     
-                            <li><span class="tooltip">Vīnogas un rozīnes
+                            <li data-image="grapes.png"><span class="tooltip">Vīnogas un rozīnes
                                 <span class="tooltiptext">
                                     <strong>Kāpēc vīnogas un rozīnes ir kaitīgas?</strong>
                                     Izraisa nopietnus nieru bojājumus, kas var novest pie nieru mazspējas. Pat neliels daudzums var būt toksisks. Sākotnējās pazīmes ietver vemšanu un caureju.
@@ -124,7 +124,7 @@
                                 </span>
                             </li>
                     
-                            <li><span class="tooltip">Jēlas olas
+                            <li data-image="eggs.png"><span class="tooltip">Jēlas olas
                                 <span class="tooltiptext">
                                     <strong>Kāpēc jēlas olas ir kaitīgas?</strong>
                                     Rada risku saindēties ar pārtiku. Olas baltumā esošā olbaltumviela avidīns traucē organismam absorbēt B vitamīna biotīnu.
@@ -132,7 +132,7 @@
                                 </span>
                             </li>
                     
-                            <li><span class="tooltip">Aknas lielos daudzumos
+                            <li data-image="liver.png"><span class="tooltip">Aknas lielos daudzumos
                                 <span class="tooltiptext">
                                     <strong>Kāpēc aknas lielos daudzumos ir kaitīgas?</strong>
                                     Var izraisīt A vitamīna toksicitāti, kas var ietekmēt kaķa kaulus un izraisīt osteoporozi.
@@ -140,7 +140,7 @@
                                 </span>
                             </li>
                     
-                            <li><span class="tooltip">Alkoholu
+                            <li data-image="alcohol.png"><span class="tooltip">Alkoholu
                                 <span class="tooltiptext">
                                     <strong>Kāpēc alkohols ir kaitīgs?</strong>
                                     Kaķiem alkohola iedarbība ir daudz smagāka nekā cilvēkiem to mazā auguma dēļ. Var izraisīt nopietnus orgānu bojājumus.
@@ -148,7 +148,7 @@
                                 </span>
                             </li>
                     
-                            <li><span class="tooltip">Kofeīnu
+                            <li data-image="caffeine.png"><span class="tooltip">Kofeīnu
                                 <span class="tooltiptext">
                                     <strong>Kāpēc kofeīns ir kaitīgs?</strong>
                                     Līdzīgi kā alkohols, kofeīna iedarbība kaķiem ir daudz spēcīgāka nekā cilvēkiem. Var izraisīt nopietnus veselības traucējumus.
@@ -156,7 +156,7 @@
                                 </span>
                             </li>
                 
-                            <li><span class="tooltip">Pienu
+                            <li data-image="milk.png"><span class="tooltip">Pienu
                                 <span class="tooltiptext">
                                     <strong>Kāpēc piens ir kaitīgs?</strong>
                                     Pieaugušiem kaķiem bieži ir laktozes nepanesība. Piena uzņemšana var radīt gremošanas traucējumus un diskomfortu.
@@ -166,9 +166,9 @@
                         </ul>
                     </div>
                 <div class="harmful-image">
-                    <img src="https://rawznaturalpetfood.com/wp-content/uploads/11-foods-Blog-1.jpg" alt="Harmful food">
+                    <img src="" alt="Harmful food" id="harmful-food-image">
                 </div>
-            </div>              
+            </div>           
         </section>
         <section class="info-block">
             <h2>Populārāko kaķu barību salīdzinājums</h2>
@@ -219,6 +219,28 @@
     <footer class="footer">
         <p>&copy; 2025 Murrātava. Veidots ar ❤️ kaķiem un viņu saimniekiem. <a href="contact.html">Sazinies ar mums</a></p>
     </footer>
-    <script src="edieni.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const harmfulFoodsList = document.querySelector('.harmful-foods ul');
+            const harmfulFoodImage = document.getElementById('harmful-food-image');
+
+            if (harmfulFoodsList && harmfulFoodImage) {
+                harmfulFoodsList.addEventListener('mouseover', function(event) {
+                    if (event.target.tagName === 'LI') {
+                        const imagePath = event.target.dataset.image;
+                        harmfulFoodImage.src = imagePath;
+                        harmfulFoodImage.alt = event.target.textContent;
+                        harmfulFoodImage.style.borderColor = '#786452'; /* Show border on hover */
+                    }
+                });
+
+                harmfulFoodsList.addEventListener('mouseout', function(event) {
+                    harmfulFoodImage.src = '';
+                    harmfulFoodImage.alt = 'Harmful food';
+                    harmfulFoodImage.style.borderColor = 'transparent'; /* Hide border on mouseout */
+                });
+            }
+        });
+    </script>
 </body>
 </html>

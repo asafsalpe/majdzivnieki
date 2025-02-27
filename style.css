@@ -90,24 +90,40 @@ h2 {
   font-weight: bold;
 }
 
+.header nav {
+  margin: 0;
+  padding: 0;
+}
+
 .hero {
   text-align: center;
-  padding: 150px 20px;
-  background-image: url("https://www.whiskas.co.uk/cdn-cgi/image/format=auto,q=90/sites/g/files/fnmzdf5651/files/2024-12/desktop-17-Kitten-development-When-does-a-kitten-become-a-cat.jpg");
+  padding: 0;
+  background-image: url("https://images.pexels.com/photos/248280/pexels-photo-248280.jpeg");
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   color: #fff;
   margin-bottom: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 .hero p {
   font-size: 1.5rem;
   margin-bottom: 30px;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 .hero .btn {
@@ -121,6 +137,24 @@ h2 {
 .hero .btn:hover {
   background-color: var(--highlight-color);
   color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+  position: relative;
+  z-index: 2;
 }
 
 .footer {
@@ -468,9 +502,9 @@ h2 {
   width: 250px;
   background-color: #f9f3e8;
   color: var(--text-color);
-  text-align: left;
+  text-align: center;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   position: absolute;
   z-index: 1000;
   bottom: 125%;
@@ -513,6 +547,8 @@ h2 {
   transform: translateY(0);
 }
 
+
+
 .tooltip .tooltiptext strong {
   display: block;
   margin-bottom: 5px;
@@ -520,6 +556,7 @@ h2 {
   font-family: "Verdana", sans-serif;
   text-align: center;
 }
+
 
 .food-info-container {
   display: flex;
@@ -547,6 +584,18 @@ h2 {
   background-color: #f9f3e8;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.harmful-image img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.harmful-foods li:hover + .harmful-image img {
+  border-color: #786452;
 }
 
 .hidden {
