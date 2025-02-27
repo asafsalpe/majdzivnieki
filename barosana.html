@@ -35,7 +35,10 @@
     
     <section class="container">
         <h1>Kaķa barošana un uzturs</h1>
-        
+        <section class="info-box">
+            <h2>Kaķu uzturs: kas jāzina katram saimniekam?</h2>
+            <p>Vai esat kādreiz aizdomājušies, cik daudz jūsu mīlulim jāēd un kura barība ir vispiemērotākā? Kaķu uzturs ir svarīgs faktors, kas ietekmē viņu veselību, aktivitāti un pat dzīves ilgumu. Lai nodrošinātu kaķim labu pašsajūtu, ir nepieciešams izprast viņa uztura vajadzības un izvēlēties atbilstošāko barību.</p>
+        </section>
 
         <section class="info-block">
             <h2>Nepieciešamās uzturvielas</h2>
@@ -45,43 +48,42 @@
                     <ol>
                         <li><span class="tooltip">Liels olbaltumvielu daudzums
                             <span class="tooltiptext">
-                                <strong>?</strong>
-                                teksts
+                                <strong>Kāpēc?</strong>
+                                Olbaltumvielas ir būtiskas kaķu organisma audu veidošanai un atjaunošanai, kā arī enzīmu un hormonu sintēzei. Kaķiem ir nepieciešamas daudz olbaltumvielas, jo viņi tās izmanto enerģijas ieguvē.
                             </span>
                             </span>
                         </li>
                         <li><span class="tooltip">Mērens tauku daudzums
                             <span class="tooltiptext">
-                                <strong>?</strong>
-                                teksts
-                            </span>
+                                <strong>Kāpēc?</strong>
+                                Tauki dod enerģiju, palīdz uzsūkties taukos šķīstošajiem vitamīniem (A, D, E, K) un ir nepieciešami šūnu membrānu veidošanai.                            </span>
                             </span>
                         </li>
                         <li><span class="tooltip">Minimāls ogļhidrātu daudzums
                             <span class="tooltiptext">
-                                <strong>?</strong>
-                                teksts
+                                <strong>Kāpēc?</strong>
+                                Kaķi var izdzīvot bez ogļhidrātiem, jo viņu organisms spēj sintezēt glikozi no olbaltumvielām un taukiem. Tomēr neliels ogļhidrātu daudzums var palīdzēt ar gremošanu.
                             </span>
                             </span>
                         </li>
                         <li><span class="tooltip">Tīrs, svaigs ūdens
                             <span class="tooltiptext">
-                                <strong>?</strong>
-                                teksts
+                                <strong>Kāpēc?</strong>
+                                ūdens ir nepieciešams visām dzīvības funkcijām, tostarp gremošanai, asinsritei un ķermeņa temperatūras regulēšanai. Kaķi bieži neuzņem pietiekami daudz ūdens, tāpēc ir svarīgi nodrošināt tā pieejamību.
                             </span>
                             </span>
                         </li>
                         <li><span class="tooltip">Vitamīni un minerālvielas
                             <span class="tooltiptext">
-                                <strong>?</strong>
-                                teksts
+                                <strong>Kāpēc?</strong>
+                                Vitamīni un minerālvielas ir nepieciešami dažādiem fizioloģiskiem procesiem, tostap imūnsistēmas darbībai, nervu sistēmas darbībai un kaulu veselībai. Kaķiem ir nepieciešami specifiski vitamīni, piemēram, A vitamīns.
                             </span>
                             </span>
                         </li>
                         <li><span class="tooltip">Taukskābes un aminoskābes
                             <span class="tooltiptext">
-                                <strong>?</strong>
-                                teksts
+                                <strong>Kāpēc?</strong>
+                                Taukskābes, piemēram, omega-3 un omega-6 ir svarīgas ādas un kažoka veselībai, kā arī iekaisuma mazināšanai. Aminoskābes, piemēram, taurīns, ir būtiskas sirds un acu veselībai.
                             </span>
                             </span>
                         </li>
@@ -208,8 +210,8 @@
             <div class = "interactive-tool">
                 <h3>Barošanas kalkulators</h3>
                 <p style="text-align: center;">Ievadiet sava kaķa vecumu un svaru, lai uzzinātu ieteicamo barības daudzumu:</p>
-                <input type="number" id="age" placeholder="Vecums (mēnešos)">
-                <input type="number" id="weight" placeholder="Svars (kg)">
+                <input type="number" id="age" placeholder="Vecums (mēnešos)" min="0">
+                <input type="number" id="weight" placeholder="Svars (kg)" min="0">
                 <button onclick="calculateFeeding()">Aprēķināt</button>
                 <p id="result"></p>
             </div>
