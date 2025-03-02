@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
     <title>Rūpēšanās</title>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0,3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -24,43 +54,50 @@
         <h1>Rūpes par kaķi</h1>
         
         <section class="info-block">
-            <h2>Ikdienas kopšana</h2>
+            <h2>Kopšana</h2>
             <div class="content-container">
                 <div class="text-content">
-                    <p>Galvenie ikdienas kopšanas uzdevumi:</p>
+                    <p>Kaķi bieži sevi kopj, bet regulāra palīdzība no Jums ir ļoti svarīga!</p>
                     <ul>
-                        <li>Ķemmēšana</li>
-                        <li>Nagu apgriešana</li>
-                        <li>Zobu tīrīšana</li>
-                        <li>Acu un ausu tīrīšana</li>
+                        <li>Īsspalvainiem kaķiem: nepieciešama maza suku vai vannošana</li>
+                        <li>Garspalvainiem kaķiem: nepieciešama regulāra tīrīšana, lai novērstu matu sapīšanos</li>
                     </ul>
+                    <p>Regulāra suku tīrīšana palīdz samazināt matu bumbu veidošanos.</p>
                 </div>
                 <div class="image-content">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7a4zb1b8BJ9w7xYkOY6EUx2dFtdIIyGO16w&s" alt="Kaķa kopšana" class="content-image">
                 </div>
             </div>
+            <p>              Paklājiņi ir jānoņem ar elektriskajām griešanas knaibles (nevis šķērēm), lai izvairītos no zemādas sagriešanas. </p>
         </section>
     
         <section class="info-block">
-            <h2>Kaķu higiēnas piederumi</h2>
+            <h2>Ausu tīrīšana</h2>
+            <p>Regulāri pārbaudiet sava kaķa ausis, vai tās ir tīras.</p>
             <ul>
-                <li>Ķemmes un sukas</li>
-                <li>Nagu šķēres</li>
-                <li>Zobu birste un pasta</li>
-                <li>Acu un ausu tīrīšanas līdzekļi</li>
-                <li>Kaķu tualete un smiltis</li>
+                <li>Netīrumi un vasks var izraisīt infekcijas</li>
+                <li>Veterinārārsts var droši notīrīt ausis</li>
             </ul>
         </section>
     
         <section class="info-block">
-            <h2>Vides bagātināšana</h2>
-            <p>Nodrošiniet kaķim stimulējošu vidi:</p>
-            <ol>
-                <li>Skrāpējamie stabi</li>
-                <li>Rotaļlietas</li>
-                <li>Slēptuves un guļvietas</li>
-                <li>Kāpšanas konstrukcijas</li>
-            </ol>
+            <h2>Mājsaimniecības apdraudējumi</h2>
+            <p>Aizsargājiet savu kaķi no šādiem apdraudējumiem</p>
+            <ul>
+                <li>Ķīmiskās vielas, pesticīdi, tīrīšanas līdzekļi, antifrīzs</li>
+                <li>lektrības vadi</li>
+                <li><div class="tooltip"><span>Narkotikas, alkohols </span><span class="tooltiptext">Nekad nedodiet kaķim cilvēku medikamentus, ja vien veterinārārsts nav norādījis</span></div></li>
+                <li> <div class="tooltip"><span>Indīgi istabas augi</span><span class="tooltiptext">Pārbaudiet, vai istabas augi nav indīgi kaķiem</span></div></li>
+            </ul>
+            <p>Kaķēni, kas mēdz košļāt gandrīz jebko, ir pakļauti lielākam riskam, un šie produkti ir jāglabā visiem kaķiem nepieejamā vietā.</p>
+        </section>
+
+        <section class="info-block">
+            <h2>Drošība dzīvoklī</h2>
+            <p>Kaķi un kaķēni jātur prom no atvērtiem logiem vai balkoniem.</p>
+            <ul>
+                <li>Kaķi var gūt traumas, krītot no liela augstuma</li>
+            </ul>
         </section>
     </section>
     <footer class="footer">

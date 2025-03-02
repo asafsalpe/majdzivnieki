@@ -23,6 +23,8 @@ body {
 
 nav ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   background-color: var(--text-color);
   display: flex;
@@ -48,6 +50,27 @@ nav a:hover:not(.active),
 .active {
   background-color: var(--primary-color);
   border-radius: 2px;
+}
+
+nav {
+  display: block;
+  width: 100%;
+  background-color: var(--text-color);
+  position: relative;
+  z-index: 10;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 21px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--primary-color);
 }
 
 a {
@@ -146,7 +169,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -157,6 +180,11 @@ h2 {
   z-index: 2;
 }
 
+.hero:hover {
+  transform: none;
+  box-shadow: none;
+}
+ 
 .footer {
   background-color: var(--text-color);
   color: #fff;
@@ -219,6 +247,13 @@ h2 {
   font-size: large;
 }
 
+.centered-section .image-text-container img {
+  max-width: 300px;
+  margin-right: 20px;
+  border-radius: 5px;
+  transition: none;
+}
+
 .products {
   background: #f9f9f9;
   padding: 30px 0;
@@ -228,7 +263,6 @@ h2 {
   width: 80%;
   margin: auto;
 }
-
 
 .product-container {
   display: flex;
@@ -247,7 +281,6 @@ h2 {
   text-shadow: 2px 2px 4px #000000;
   border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -302,7 +335,6 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3), rgba(0,0,0,0.8));
   z-index: 1;
 }
 
@@ -317,7 +349,6 @@ h2 {
 
 .product:hover{
   transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .product h3, .product p {
@@ -344,8 +375,6 @@ h2 {
 .product:nth-child(5) {
   background-image: url('https://images.pexels.com/photos/13293093/pexels-photo-13293093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 }
-
-
 
 .btn {
   display: inline-block;
@@ -627,8 +656,6 @@ h2 {
   transform: translateY(0);
 }
 
-
-
 .tooltip .tooltiptext strong {
   display: block;
   margin-bottom: 5px;
@@ -636,7 +663,6 @@ h2 {
   font-family: "Verdana", sans-serif;
   text-align: center;
 }
-
 
 .food-info-container {
   display: flex;
@@ -666,7 +692,6 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
 .harmful-foods li:hover + .harmful-image img {
   border-color: #786452;
 }
@@ -680,7 +705,6 @@ h2 {
   align-items: flex-start;
   gap: 20px;
 }
-
 
 .harmful-image:hover {
   opacity: 1;
@@ -776,6 +800,10 @@ h2 {
   color: var(--text-color);
 }
 
+.image-text-container img {
+  box-shadow: none;
+  transition: none;
+}
 
 @media screen and (max-width: 768px) {
 
