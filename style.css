@@ -862,12 +862,18 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .contact-form label {
   font-weight: bold;
   margin-top: 10px;
   display: block;
+  text-align: left;
+  width: 100%;
 }
 
 .contact-form input,
@@ -877,21 +883,29 @@ h2 {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: none;
 }
 
 .contact-form button {
-  background-color: var(--primary-color);
+  background: #4caf50;
   color: white;
-  padding: 10px 15px;
+  padding: 10px;
   border: none;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background 0.3s;
+  width: 100%;
 }
 
 .contact-form button:hover {
-  background: var(--highlight-color);
+  background: #45a049;
 }
 
 .harmful-item {
