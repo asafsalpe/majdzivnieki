@@ -250,7 +250,7 @@ h2 {
 }
 
 .centered-section .image-text-container img {
-  max-width: 300px;
+  max-width: 450px;
   margin-right: 20px;
   border-radius: 5px;
   transition: none;
@@ -277,10 +277,9 @@ h2 {
 }
 
 .product {
-  width: calc(20% - 20px);
+  width: calc(25% - 20px);
   flex: 1 1 calc(20% - 20px);
   min-width: 220px;
-  max-width: 240px;
   margin: 10px;
   padding-bottom: 15px;
   color: white;
@@ -334,7 +333,9 @@ h2 {
 .product p {
   margin-bottom: 20px;
   padding-top: 60px;
-  color:#333
+  color:#333;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .product .btn {
@@ -354,8 +355,8 @@ h2 {
 }
 
 .products-title {
-  margin-left: 15%;
-  color: #555;
+  margin-left: 2%;
+  color: var(--text-color);
   text-align: left;
   padding-left: 10px;
 }
@@ -833,6 +834,8 @@ h2 {
 .image-text-container img {
   box-shadow: none;
   transition: none;
+  width: 1000px;
+  height: auto;
 }
 
 @media screen and (max-width: 768px) {
