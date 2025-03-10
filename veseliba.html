@@ -139,673 +139,789 @@
                         center: {
                             lat: 56.8796,
                             lng: 24.6032
-                        }, // Latvia Coordinates
+                        },
                         zoom: 7,
                     });
 
-                    //Shelter Locations
+                    const defaultIcon = {
+                        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNYnawQJZxdw8d2LdjizurZR4o1uIlAb2TQ&s",
+                        scaledSize: new google.maps.Size(30,30)
+                    }
+
+                    const specialIcon = {
+                        url: "blue.png",
+                        scaledSize: new google.maps.Size(30,30)
+                    }
+
                     const shelters = [
                     {
                         name: "Veterinārā klīnika - zooveikals Tedijs",
                         lat: 57.31532470058837,  
                         lng: 25.283678063851287,
-                        address: "Uzvaras bulvāris 30, Cēsis, Cēsu pilsēta, Cēsu novads, LV-4101"
+                        address: "Uzvaras bulvāris 30, Cēsis, Cēsu pilsēta, Cēsu novads, LV-4101",
+                        isSpecial: true
                     }
                     ,
                     {
                         name: "Vetcentrs",
                         lat: 57.006281549596146,  
                         lng: 24.12727189034326,
-                        address: "Viestura prospekts 73-1a, Ziemeļu rajons, Rīga, LV-1005"
+                        address: "Viestura prospekts 73-1a, Ziemeļu rajons, Rīga, LV-1005",
+                        isSpecial: false
                     },
                     {
                         name: "Nordavet, Veterinārā aptieka un klīnika",
                         lat: 57.036322058390816,   
                         lng: 24.08772294517767,
-                        address: "Baltāsbaznīcas iela 37/39, Ziemeļu rajons, Rīga, LV-1015"
+                        address: "Baltāsbaznīcas iela 37/39, Ziemeļu rajons, Rīga, LV-1015",
+                        isSpecial: true
                     },
 
                     {
                         name: "Udrasu Litas un Kaspara veterinārā prakse",
                         lat: 56.856525485073725,  
                         lng: 26.209676638835056,
-                        address: "Raiņa iela 34, Madona, Madonas pilsēta, Madonas novads, LV-4801"
+                        address: "Raiņa iela 34, Madona, Madonas pilsēta, Madonas novads, LV-4801",
+                        isSpecial: true
                     },
                     {
                         name: "Torņkalna veterinārā klīnika un aptieka",
                         lat: 56.92197345577523, 
                         lng: 24.089772522872536,
-                        address: "Vienības gat. 66, Zemgales priekšpilsēta, Rīga, LV-1004"
+                        address: "Vienības gat. 66, Zemgales priekšpilsēta, Rīga, LV-1004",
+                        isSpecial: true
                     },
                     {
                         name: "Smiltenes tehnikuma veterinārā mācību klīnika",
                         lat: 57.429690383694826,   
                         lng: 25.909409857391097,
-                        address: "Kalnamuiža 12, Kalnamuiža, Smiltenes pagasts, Smiltenes novads, LV-4729"
+                        address: "Kalnamuiža 12, Kalnamuiža, Smiltenes pagasts, Smiltenes novads, LV-4729",
+                        isSpecial: true
                     },
                     {
                         name: "Saulkrastu veterinārā ambulance",
                         lat: 57.25588277036508,  
                         lng: 24.413897266971986,
-                        address: "Rīgas iela 99, Saulkrasti, Saulkrastu pilsēta, Saulkrastu novads, LV-2160"
+                        address: "Rīgas iela 99, Saulkrasti, Saulkrastu pilsēta, Saulkrastu novads, LV-2160",
+                        isSpecial: true
                     },
                     {
                         name: "Latvijas Biozinātņu un tehnoloģiju universitātes Veterinārā klīnika",
                         lat: 56.66180660861385, 
                         lng: 23.762414858628784,
-                        address: "Kristapa Helmaņa iela 8, Jelgava, LV-3004"
+                        address: "Kristapa Helmaņa iela 8, Jelgava, LV-3004",
+                        isSpecial: true
                     },
                     {
                         name: "Ami's",
                         lat: 57.0023693910382,  
                         lng: 24.11853268788591,
-                        address: "Tvaika iela 34, Ziemeļu rajons, Rīga, LV-1005"
+                        address: "Tvaika iela 34, Ziemeļu rajons, Rīga, LV-1005",
+                        isSpecial: true
                     },
                     {
                         name: "BIŠU DĀRZS",
                         lat: 56.94760424532001,  
                         lng: 24.016307083386508,
-                        address: "Paula Lejiņa iela 5, Zemgales priekšpilsēta, Rīga, LV-1029"
+                        address: "Paula Lejiņa iela 5, Zemgales priekšpilsēta, Rīga, LV-1029",
+                        isSpecial: true
                     },
                     {
                         name: "Amicus",
                         lat: 56.51386700029714,  
                         lng: 27.336717298641663,
-                        address: "Kr. Valdemāra iela 16, Rēzekne, LV-4601"
+                        address: "Kr. Valdemāra iela 16, Rēzekne, LV-4601",
+                        isSpecial: true
                     },
                     {
                         name: "I.Puriņas un I.Stepanovas veterinārā prakse",
                         lat:  57.03214867656931,
                         lng: 24.110514039598023,
-                        address: "Melīdas iela 11, Ziemeļu rajons, Rīga, LV-1015"
+                        address: "Melīdas iela 11, Ziemeļu rajons, Rīga, LV-1015",
+                        isSpecial: true
                     },
                     {
                         name: "Dr. Nartiša veterinārā prakse",
                         lat: 57.156633510453055,
                         lng: 24.865702909803673,
-                        address: "Dārza iela 29A, Sigulda, Siguldas pilsēta, Siguldas novads, LV-2150"
+                        address: "Dārza iela 29A, Sigulda, Siguldas pilsēta, Siguldas novads, LV-2150",
+                        isSpecial: true
                     },
                     {
                         name: "Latgales veterinārais centrs",
                         lat: 55.88698061603533, 
                         lng: 26.54785082265488,
-                        address: "Jātnieku iela 63, Daugavpils, LV-5417"
+                        address: "Jātnieku iela 63, Daugavpils, LV-5417",
+                        isSpecial: true
                     },
                     {
                         name: "Veterinārā ambulance TOTO",
                         lat: 56.9636613834712,
                         lng: 24.00893112635845,
-                        address: "Slokas iela 134A, Kurzemes rajons, Rīga, LV-1069"
+                        address: "Slokas iela 134A, Kurzemes rajons, Rīga, LV-1069",
+                        isSpecial: true
                     },
                     {
                         name: "Kavet",
                         lat: 56.520091419596845,
                         lng: 21.032305527367217,
-                        address: "Brīvības gat. 347, Vidzemes priekšpilsēta, Rīga, LV-1006"
+                        address: "Brīvības gat. 347, Vidzemes priekšpilsēta, Rīga, LV-1006",
+                        isSpecial: true
                     },
                     {
                         name: "IKAROSS",
                         lat: 56.98657633045827, 
                         lng: 24.21228389575296,
-                        address: "Lilijas iela 28, Kurzemes rajons, Rīga, LV-1055"
+                        address: "Lilijas iela 28, Kurzemes rajons, Rīga, LV-1055",
+                        isSpecial: true
                     },
                     {
                         name: "IKAROSS",
                         lat: 56.964717241663855, 
                         lng: 24.060262394470264,
-                        address: "Gobas iela 10a, Kurzemes rajons, Rīga, LV-1016"
+                        address: "Gobas iela 10a, Kurzemes rajons, Rīga, LV-1016",
+                        isSpecial: true
                     },
                     {
                         name: "Veterinārā palīdzība Salaspilī",
                         lat: 56.859971348785336,  
                         lng: 24.335209845717,
-                        address: "Griezes iela 17-31, Salaspils, Salaspils pilsēta, Salaspils novads, LV-2169"
+                        address: "Griezes iela 17-31, Salaspils, Salaspils pilsēta, Salaspils novads, LV-2169",
+                        isSpecial: true
                     },
                     {
                         name: "Ādažu veterinārā klīnika",
                         lat: 57.09631320878528, 
                         lng: 24.315925064551216,
-                        address: "Muižas iela 5, Ādaži, Ādažu pagasts, Ādažu novads, LV-2164"
+                        address: "Muižas iela 5, Ādaži, Ādažu pagasts, Ādažu novads, LV-2164",
+                        isSpecial: true
                     },
                     {
                         name: "Lielvardes veterinara ambulance",
                         lat: 56.71724695856568,   
                         lng: 24.812561632585325,
-                        address: "Lāčplēša iela 17, Lielvārde, Lielvārdes pilsēta, Ogres novads, LV-5070"
+                        address: "Lāčplēša iela 17, Lielvārde, Lielvārdes pilsēta, Ogres novads, LV-5070",
+                        isSpecial: true
                     },
                     {
                         name: "Dr. Beinerts",
                         lat: 56.9498285194712,  
                         lng: 24.136711104113903,
-                        address: "Ģertrūdes iela 101, Latgales priekšpilsēta, Rīga, LV-1009"
+                        address: "Ģertrūdes iela 101, Latgales priekšpilsēta, Rīga, LV-1009",
+                        isSpecial: true
                     },
                     {
                         name: "Ina Lāce, veterinārārste",
                         lat: 56.50812956371912,    
                         lng: 21.0057057662081,
-                        address: "Republikas iela 10-1, Liepāja, LV-3401"
+                        address: "Republikas iela 10-1, Liepāja, LV-3401",
+                        isSpecial: true
                     },
                     {
                         name: "Dr. Beinerts",
                         lat: 56.95351704842673,  
                         lng: 24.038599328740524,
-                        address: "Kurzemes prospekts 1A, Kurzemes rajons, Rīga, LV-1067"
+                        address: "Kurzemes prospekts 1A, Kurzemes rajons, Rīga, LV-1067",
+                        isSpecial: true
                     },
                     {
                         name: "Ilzes Kalnbirzes veterinārā privātprakse",
                         lat: 57.25915989563192,    
                         lng: 22.584474793508885,
-                        address: "Krišjāņa Valdemāra iela 75A, Talsi, Talsu pilsēta, Talsu novads, LV-3201"
+                        address: "Krišjāņa Valdemāra iela 75A, Talsi, Talsu pilsēta, Talsu novads, LV-3201",
+                        isSpecial: true
                     },
                     {
                         name: "Dr. Beinerts",
                         lat: 56.87242351407808,   
                         lng: 24.34826607585274,
-                        address: "Institūta iela 4, Salaspils, Salaspils pilsēta, Salaspils novads, LV-2169"
+                        address: "Institūta iela 4, Salaspils, Salaspils pilsēta, Salaspils novads, LV-2169",
+                        isSpecial: true
                     },
                     {
                         name: "Kalnbērzs",
                         lat: 56.95997808682938,    
                         lng: 24.031721156645023,
-                        address: "Slokas iela 163a, Kurzemes rajons, Rīga, LV-1067"
+                        address: "Slokas iela 163a, Kurzemes rajons, Rīga, LV-1067",
+                        isSpecial: true
                     },
                     {
                         name: "Priekuļu Veterinārā klīnika",
                         lat: 57.310547254984485,     
                         lng: 25.35190902324047,
-                        address: "Cēsu prospekts 3, Priekuļi, Priekuļu pagasts, Cēsu novads, LV-4126"
+                        address: "Cēsu prospekts 3, Priekuļi, Priekuļu pagasts, Cēsu novads, LV-4126",
+                        isSpecial: true
                     },
                     {
                         name: "Reinholces A. veterinārais doktorāts",
                         lat: 56.482243241204294,    
                         lng: 21.025599417801917,
-                        address: "Mirdzas Ķempes iela 15, Liepāja, LV-3407"
+                        address: "Mirdzas Ķempes iela 15, Liepāja, LV-3407",
+                        isSpecial: true
                     },
                     {
                         name: "Agņa Kupriša veterinārā klīnika",
                         lat: 57.425224814473175,     
                         lng: 25.898895222402814,
-                        address: "Audēju iela 3, Smiltene, Smiltenes pilsēta, Smiltenes novads, LV-4729"
+                        address: "Audēju iela 3, Smiltene, Smiltenes pilsēta, Smiltenes novads, LV-4729",
+                        isSpecial: true
                     },
                     {
                         name: "Veterinārā klīnika, SIA 'Viesums'",
                         lat: 56.828233006321504,     
                         lng: 24.239124419649677,
-                        address: "t/c ''Dālderi, Nākotnes iela 1, Ķekava, Ķekavas pagasts, Ķekavas novads, LV-2123"
+                        address: "t/c ''Dālderi, Nākotnes iela 1, Ķekava, Ķekavas pagasts, Ķekavas novads, LV-2123",
+                        isSpecial: true
                     },
                     {
                         name: "Jolantas Kuzņecovas veterinārā klīnika",
                         lat: 56.51526934433221,      
                         lng: 27.34012314499071,
-                        address: "Dārzu iela 60, Rēzekne, LV-4601"
+                        address: "Dārzu iela 60, Rēzekne, LV-4601",
+                        isSpecial: true
                     },
                     {
                         name: "Ķengaraga veterinārā ambulance",
                         lat: 56.927138410629816,      
                         lng: 24.177158421431894,
-                        address: "Mazā Rencēnu 2, Latgales priekšpilsēta, Rīga, LV-1073"
+                        address: "Mazā Rencēnu 2, Latgales priekšpilsēta, Rīga, LV-1073",
+                        isSpecial: true
                     },
                     {
                         name: "All4pets, Veterinārais centrs",
                         lat: 56.78939246888388,       
                         lng: 23.93866347717793,
-                        address: "Zeiferta iela 12, Olaine, Olaines pilsēta, Olaines novads, LV-2114"
+                        address: "Zeiferta iela 12, Olaine, Olaines pilsēta, Olaines novads, LV-2114",
+                        isSpecial: true
                     },
                     {
                         name: "Ziepniekkalna veterinārā klīnika VivaVit",
                         lat: 56.910086051830326,       
                         lng: 24.094987537158982,
-                        address: "Zaļenieku iela 14 (ieeja no, Valdeķu iela, Rīga, LV-1058"
+                        address: "Zaļenieku iela 14 (ieeja no, Valdeķu iela, Rīga, LV-1058",
+                        isSpecial: true
                     },
                     {
                         name: "Zemgales veterinārais centrs",
                         lat: 56.652075265218265,       
                         lng: 23.72076279803493,
-                        address: "Krišjāņa Barona iela 17, Jelgava, LV-3001"
+                        address: "Krišjāņa Barona iela 17, Jelgava, LV-3001",
+                        isSpecial: true
                     },
                     {
                         name: "Vinni Vet",
                         lat: 56.5245419415157,       
                         lng: 21.01165521358253,
-                        address: "Krūmu iela 5, Liepāja, LV-3405"
+                        address: "Krūmu iela 5, Liepāja, LV-3405",
+                        isSpecial: true
                     },
                     {
                         name: "Vidzemes veterinārais serviss, SIA, veikals - klīnika",
                         lat: 57.54509439695014,       
                         lng: 25.412927175198092,
-                        address: "Ezera iela 3, Valmiera, LV-4201"
+                        address: "Ezera iela 3, Valmiera, LV-4201",
+                        isSpecial: true
                     },
                     {
                         name: "Vidzemes veterinārais serviss",
                         lat: 57.75311935173838,       
                         lng: 24.357881289259765,
-                        address: "Rīgas iela 1, Salacgrīva, Salacgrīva pilsēta, Limbažu novads, LV-4033"
+                        address: "Rīgas iela 1, Salacgrīva, Salacgrīva pilsēta, Limbažu novads, LV-4033",
+                        isSpecial: true
                     },
                     {
                         name: "Vidzemes veterinārais serviss",
                         lat: 57.51527815979421,       
                         lng: 24.713802102315263,
-                        address: "Burtnieku iela 6, Limbaži, Limbažu pilsēta, Limbažu novads, LV-4001"
+                        address: "Burtnieku iela 6, Limbaži, Limbažu pilsēta, Limbažu novads, LV-4001",
+                        isSpecial: true
                     },
                     {
                         name: "VetVesta, SIA",
                         lat: 56.964732329834874,       
                         lng: 24.144172042916434,
-                        address: "Brīvības 156, Ērgļu iela 7-k 1, Rīga, LV-1012"
+                        address: "Brīvības 156, Ērgļu iela 7-k 1, Rīga, LV-1012",
+                        isSpecial: true
                     },
                     {
                         name: "Vetklīnika24",
                         lat: 56.9630322788333,       
                         lng: 24.17059860806564,
-                        address: "Dzelzavas iela 15, Vidzemes priekšpilsēta, Rīga, LV-1084"
+                        address: "Dzelzavas iela 15, Vidzemes priekšpilsēta, Rīga, LV-1084",
+                        isSpecial: true
                     },
                     {
                         name: "LION Veterinārā klīnika Purvciems",
                         lat: 56.959268269486415,       
                         lng: 24.174312139012553,
-                        address: "Nīcgales iela 2, Vidzemes priekšpilsēta, Rīga, LV-1035"
+                        address: "Nīcgales iela 2, Vidzemes priekšpilsēta, Rīga, LV-1035",
+                        isSpecial: true
                     },
                     {
                         name: "Veterinārais serviss",
                         lat: 56.92709666415067,    
                         lng: 24.17711711418012,
-                        address: "Mazā Rencēnu 2, Latgales priekšpilsēta, Rīga, LV-1073"
+                        address: "Mazā Rencēnu 2, Latgales priekšpilsēta, Rīga, LV-1073",
+                        isSpecial: true
                     },
                     {
                         name: "Piņķu veterinārā klīnika",
                         lat: 56.94338271068211,       
                         lng: 23.91164582562273,
-                        address: "Jūrmalas iela 14, Piņķi, Babītes pagasts, Mārupes novads, LV-2107"
+                        address: "Jūrmalas iela 14, Piņķi, Babītes pagasts, Mārupes novads, LV-2107",
+                        isSpecial: true
                     },
                     {
                         name: "Veile, Veterinārā klīnika",
                         lat: 56.971849975838374,       
                         lng: 24.232275339784437,
-                        address: "Mežciema iela 14, Vidzemes priekšpilsēta, Rīga, LV-1079"
+                        address: "Mežciema iela 14, Vidzemes priekšpilsēta, Rīga, LV-1079",
+                        isSpecial: true
                     },
                     {
                         name: "Vecumnieku veterinārā aptieka - ambulance",
                         lat: 56.605890143683794,       
                         lng: 24.52295807641713,
-                        address: "Rīgas iela 11, Vecumnieki, Vecumnieku pagasts, Bauskas novads, LV-3933"
+                        address: "Rīgas iela 11, Vecumnieki, Vecumnieku pagasts, Bauskas novads, LV-3933",
+                        isSpecial: true
                     },
                     {
                         name: "Titurgas veterinārā klīnika Sigitavet",
                         lat: 56.87917019453188,       
                         lng: 24.146879390648255,
-                        address: "Uzvaras prospekts 11, Baloži, Baložu pilsēta, Ķekavas novads, LV-2128"
+                        address: "Uzvaras prospekts 11, Baloži, Baložu pilsēta, Ķekavas novads, LV-2128",
+                        isSpecial: true
                     },
                     {
                         name: "Sanarius",
                         lat: 56.656493237973514,       
                         lng: 23.717028319932854,
-                        address: "Viestura iela 22, Jelgava, LV-3007"
+                        address: "Viestura iela 22, Jelgava, LV-3007",
+                        isSpecial: true
                     },
                     {
                         name: "SB Vet serviss , SIA",
                         lat: 56.96747776823659,       
                         lng: 23.163170437428818,
-                        address: "Ed. Veidenbauma iela 1, Tukums, Tukuma pilsēta, Tukuma novads, LV-3101"
+                        address: "Ed. Veidenbauma iela 1, Tukums, Tukuma pilsēta, Tukuma novads, LV-3101",
+                        isSpecial: true
                     },
                     {
                         name: "Purni",
                         lat: 57.08046174556273,       
                         lng: 24.322041501112654,
-                        address: "Pirmā iela 38A, Ādaži, Ādažu pagasts, Ādažu novads, LV-2164"
+                        address: "Pirmā iela 38A, Ādaži, Ādažu pagasts, Ādažu novads, LV-2164",
+                        isSpecial: true
                     },
                     {
                         name: "Pie Ilzes un Ķepaiņu Klīnika",
                         lat: 57.17779411905187,       
                         lng: 26.756126689912893,
-                        address: "Rīgas iela 71, Gulbene, Gulbenes pilsēta, Gulbenes novads, LV-4401"
+                        address: "Rīgas iela 71, Gulbene, Gulbenes pilsēta, Gulbenes novads, LV-4401",
+                        isSpecial: true
                     },
                     {
                         name: "PetCity Candera klīnika",
                         lat: 56.94103997703737,       
                         lng: 24.049129295352174,
-                        address: "Fridriha Candera iela 4, Zemgales priekšpilsēta, Rīga, LV-1046"
+                        address: "Fridriha Candera iela 4, Zemgales priekšpilsēta, Rīga, LV-1046",
+                        isSpecial: true
                     },
                     {
                         name: "SIA 'Paija Vet'",
                         lat: 56.96353653918774,       
                         lng: 24.13013430981589,
-                        address: "A, Aristida Briāna iela 12, Centra rajons, Rīga, LV-1001"
+                        address: "A, Aristida Briāna iela 12, Centra rajons, Rīga, LV-1001",
+                        isSpecial: true
                     },
                     {
                         name: "OSI serviss, SIA",
                         lat: 56.95281353062044,       
                         lng: 24.143758071707328,
-                        address: "Avotu iela 66, Latgales priekšpilsēta, Rīga, LV-1009"
+                        address: "Avotu iela 66, Latgales priekšpilsēta, Rīga, LV-1009",
+                        isSpecial: true
                     },
                     {
                         name: "NBvet, SIA, veterinārā klīnika",
                         lat: 56.96801808433423,       
                         lng: 24.10144231831432,
-                        address: "Pētersalas iela 17, Ziemeļu rajons, Rīga, LV-1045"
+                        address: "Pētersalas iela 17, Ziemeļu rajons, Rīga, LV-1045",
+                        isSpecial: true
                     },
                     {
                         name: "Mellužu veterinārā klīnika",
                         lat: 56.962302056419745,       
                         lng: 23.72218129730279,
-                        address: "Dārzu iela 9, Jūrmala, LV-2008"
+                        address: "Dārzu iela 9, Jūrmala, LV-2008",
+                        isSpecial: true
                     },
                     {
                         name: "Mazo brāļu hospitālis, Veterinārā klīnika",
                         lat: 56.94502284873769,       
                         lng: 24.071779674182658,
-                        address: "Kalnciema Iela 19, Zemgales priekšpilsēta, Rīga, LV-1046"
+                        address: "Kalnciema Iela 19, Zemgales priekšpilsēta, Rīga, LV-1046",
+                        isSpecial: false
                     },
                     {
                         name: "Labākie draugi",
                         lat: 57.41948395690294,       
                         lng: 27.052524358257603,
-                        address: "Latgales iela 3A, Alūksne, Alūksne pilsēta, Alūksnes novads, LV-4301"
+                        address: "Latgales iela 3A, Alūksne, Alūksne pilsēta, Alūksnes novads, LV-4301",
+                        isSpecial: false
                     },
                     {
                         name: "Klivet veterinārā klīnika",
                         lat: 56.900751895457,       
                         lng: 24.216372343840693,
-                        address: "Višķu iela 25 (bijusi, Lokomotīves iela 100, Rīga, LV-1057"
+                        address: "Višķu iela 25 (bijusi, Lokomotīves iela 100, Rīga, LV-1057",
+                        isSpecial: false
                     },
                     {
                         name: "Jūrmalas veterinārā klīnika",
                         lat: 56.96204285641552,       
                         lng: 23.60384453459538,
-                        address: "Skolas iela 50, Jūrmala, LV-2016"
+                        address: "Skolas iela 50, Jūrmala, LV-2016",
+                        isSpecial: false
                     },
                     {
                         name: "Iecavas veterinārā klinika",
                         lat: 56.599240961084455,       
                         lng: 24.19728246519034,
-                        address: "Tirgus iela 7c, Iecava, Iecava pilsēta, Bauskas novads, LV-3913"
+                        address: "Tirgus iela 7c, Iecava, Iecava pilsēta, Bauskas novads, LV-3913",
+                        isSpecial: false
                     },
                     {
                         name: "Gabītis",
                         lat: 56.9075075154149,       
                         lng: 24.189810817211992,
-                        address: "Bultu iela 3, Latgales priekšpilsēta, Rīga, LV-1057"
+                        address: "Bultu iela 3, Latgales priekšpilsēta, Rīga, LV-1057",
+                        isSpecial: false
                     },
                     {
                         name: "franceska",
                         lat: 56.95177195690593,       
                         lng: 24.126396112946463,
-                        address: "Blaumaņa iela 29, Centra rajons, Rīga, LV-1011"
+                        address: "Blaumaņa iela 29, Centra rajons, Rīga, LV-1011",
+                        isSpecial: false
                     },
                     {
                         name: "Sia Fel-Can",
                         lat: 56.91452477657464,       
                         lng: 24.076067357609308,
-                        address: "Codes iela 3a, Zemgales priekšpilsēta, Rīga, LV-1058"
+                        address: "Codes iela 3a, Zemgales priekšpilsēta, Rīga, LV-1058",
+                        isSpecial: false
                     },
                     {
                         name: "SIA 'Dzintara veterinārā klīnika'",
                         lat: 56.50514675678959,       
                         lng: 20.999366920382485,
-                        address: "Dzintaru iela 8, Liepāja, LV-3401"
+                        address: "Dzintaru iela 8, Liepāja, LV-3401",
+                        isSpecial: false
                     },
                     {
                         name: "Veterinārā klīnika DAVET",
                         lat: 56.53549904941786,       
                         lng: 21.027681113558096,
-                        address: "Ventspils iela 54, Liepāja, LV-3405"
+                        address: "Ventspils iela 54, Liepāja, LV-3405",
+                        isSpecial: false
                     },
                     {
                         name: "Aizkraukles veterinārā klīnika DK VETMED",
                         lat: 56.5998626371888,       
                         lng: 25.241928231123776,
-                        address: "Rūpniecības iela 9, Aizkraukle, Aizkraukle pilsēta, Aizkraukles novads, LV-5101"
+                        address: "Rūpniecības iela 9, Aizkraukle, Aizkraukle pilsēta, Aizkraukles novads, LV-5101",
+                        isSpecial: false
                     },
                     {
                         name: "CORTEX veterinārā klīnika",
                         lat: 56.4096715761671,        
                         lng: 24.186265142346315,
-                        address: "Plūdoņa iela 36/1, Bauska, Bauskas pilsēta, Bauskas novads, LV-3901"
+                        address: "Plūdoņa iela 36/1, Bauska, Bauskas pilsēta, Bauskas novads, LV-3901",
+                        isSpecial: false
                     },
                     {
                         name: "Biovet, SIA",
                         lat: 56.94975135206519,        
                         lng: 24.17233393808219,
-                        address: "Nīcgales iela 32, Latgales priekšpilsēta, Rīga, LV-1035"
+                        address: "Nīcgales iela 32, Latgales priekšpilsēta, Rīga, LV-1035",
+                        isSpecial: false
                     },
                     {
                         name: "Berimors un Draugi",
                         lat: 56.97098581979672,        
                         lng: 23.162786918501055,
-                        address: "Kurzemes iela 6 : P, Tukums, Tukuma pilsēta, Tukuma novads, LV-3101"
+                        address: "Kurzemes iela 6 : P, Tukums, Tukuma pilsēta, Tukuma novads, LV-3101",
+                        isSpecial: false
                     },
                     {
                         name: "Bauskas Veterinārais centrs",
                         lat: 56.418261454300485,        
                         lng: 24.198468526515114,
-                        address: "Mēmeles iela 15, Bauska, Bauskas pilsēta, Bauskas novads, LV-3901"
+                        address: "Mēmeles iela 15, Bauska, Bauskas pilsēta, Bauskas novads, LV-3901",
+                        isSpecial: false
                     },
                     {
                         name: "B.Reinika un Ko",
                         lat: 56.94606012477244,        
                         lng: 24.078678078515203,
-                        address: "Ērģeļu iela 3, Zemgales priekšpilsēta, Rīga, LV-1048"
+                        address: "Ērģeļu iela 3, Zemgales priekšpilsēta, Rīga, LV-1048",
+                        isSpecial: false
                     },
                     {
                         name: "Anitas veterinārā klīnika",
                         lat: 56.66468306246447,        
                         lng: 22.494994681564943,
-                        address: "Striķu iela 9, Saldus, Saldus pilsēta, Saldus novads, LV-3801"
+                        address: "Striķu iela 9, Saldus, Saldus pilsēta, Saldus novads, LV-3801",
+                        isSpecial: false
                     },
                     {
                         name: "Terion veterinārā klīnika, aptieka.",
                         lat: 56.960915432359975,        
                         lng: 24.008245660535593,
-                        address: "Auru iela 9b, Kurzemes rajons, Rīga, LV-1069"
+                        address: "Auru iela 9b, Kurzemes rajons, Rīga, LV-1069",
+                        isSpecial: false
                     },
                     {
                         name: "Anivet SIA, veterinārā klīnika Juglas ezers",
                         lat: 56.97659329381039,        
                         lng: 24.2536623655957,
-                        address: "Juglas iela 51, Vidzemes priekšpilsēta, Rīga, LV-1024"
+                        address: "Juglas iela 51, Vidzemes priekšpilsēta, Rīga, LV-1024",
+                        isSpecial: false
                     },
                     {
                         name: "Terion, Veterinārā klīnika",
                         lat: 56.9605246715122,        
                         lng: 24.14520062001176,
-                        address: "Laboratorijas iela 2a, Latgales priekšpilsēta, Rīga, LV-1012"
+                        address: "Laboratorijas iela 2a, Latgales priekšpilsēta, Rīga, LV-1012",
+                        isSpecial: false
                     },
                     {
                         name: "Animu veterinārā klīnika",
                         lat: 56.49793791394804,        
                         lng: 25.865157747774578,
-                        address: "Katoļu iela 6, Jēkabpils, LV-5201"
+                        address: "Katoļu iela 6, Jēkabpils, LV-5201",
+                        isSpecial: false
                     },
                     {
                         name: "BarberDog Ķengarags- veterinārā klīnika, dzīvnieku frizētava, zooveikals",
                         lat: 56.915030887566296,        
                         lng: 24.174594986097613,
-                        address: "Latgales iela 250-k-4, Latgales priekšpilsēta, Rīga, LV-1063"
+                        address: "Latgales iela 250-k-4, Latgales priekšpilsēta, Rīga, LV-1063",
+                        isSpecial: false
                     },
                     {
                         name: "SIA Elvet veterinārā ambulance un zooveikals",
                         lat: 56.61678752542672,        
                         lng: 23.283290036858578,
-                        address: "Skolas iela 26A, Dobele, Dobeles pilsēta, Dobeles novads, LV-3701"
+                        address: "Skolas iela 26A, Dobele, Dobeles pilsēta, Dobeles novads, LV-3701",
+                        isSpecial: false
                     },
                     {
                         name: "Veterinārārste Ieva Kondrāte, ZS Laukpēteri",
                         lat: 56.67563392740654,        
                         lng: 22.958993616707513,
-                        address: "Laukpēteri, Bikstu pagasts, Dobeles novads, LV-3713"
+                        address: "Laukpēteri, Bikstu pagasts, Dobeles novads, LV-3713",
+                        isSpecial: false
                     },
                     {
                         name: "Dekstra, veterinārā klīnika (pieņemšana ārpus darba laika, svētku dienās vienojoties)",
                         lat: 56.95918302894058,        
                         lng: 23.694155596997152,
-                        address: "Asaru prospekts 2, Jūrmala, LV-2008"
+                        address: "Asaru prospekts 2, Jūrmala, LV-2008",
+                        isSpecial: false
                     },
                     {
                         name: "Bogdanovs Vladimirs, veterinārārsts",
                         lat: 56.980878478848034,        
                         lng: 23.832012642566283,
-                        address: "Dzintaru prospekts 60-3, Jūrmala, LV-2015"
+                        address: "Dzintaru prospekts 60-3, Jūrmala, LV-2015",
+                        isSpecial: false
                     },
                     {
                         name: "Spoža Spalva",
                         lat: 57.77895539842298,        
                         lng: 26.021789122978404,
-                        address: "Smilšu iela 29, Valka, Valkas pilsēta, Valkas novads, LV-4701"
+                        address: "Smilšu iela 29, Valka, Valkas pilsēta, Valkas novads, LV-4701",
+                        isSpecial: false
                     },
                     {
                         name: "Sanovet , SIA, Veterinārā klīnika",
                         lat: 57.39195102665748,         
                         lng: 21.558957871807568,
-                        address: "Jūras iela 20, Ventspils, LV-3601"
+                        address: "Jūras iela 20, Ventspils, LV-3601",
+                        isSpecial: false
                     },
                     {
                         name: "Pārventas Veterinārā ambulance, IU",
                         lat: 57.401784861790524,         
                         lng: 21.600647910949597,
-                        address: "Tārgales iela 48, Ventspils, LV-3602"
+                        address: "Tārgales iela 48, Ventspils, LV-3602",
+                        isSpecial: false
                     },
                     {
                         name: "Obodņikova veterinārais serviss",
                         lat: 56.96761097355693,         
                         lng: 21.964326635973713,
-                        address: "Putnu iela 5, Kuldīga, Kuldīgas pilsēta, Kuldigas raj., LV-3301"
+                        address: "Putnu iela 5, Kuldīga, Kuldīgas pilsēta, Kuldigas raj., LV-3301",
+                        isSpecial: false
                     },
                     {
                         name: "Līga-vet, veterinārā klīnika",
                         lat: 56.40598584396287,         
                         lng: 24.200834703555135,
-                        address: "Zaļā iela 11-k.7, Bauska, Bauskas pilsēta, Bauskas novads, LV-3901"
+                        address: "Zaļā iela 11-k.7, Bauska, Bauskas pilsēta, Bauskas novads, LV-3901",
+                        isSpecial: false
                     },
                     {
                         name: "Hīrons, SIA, Purvciema veterinārā klīnika-aptieka",
                         lat: 56.9531139942326,         
                         lng: 24.203585634376058,
-                        address: "Zvaigznāja gatve 2, Vidzemes priekšpilsēta, Rīga, LV-1082"
+                        address: "Zvaigznāja gatve 2, Vidzemes priekšpilsēta, Rīga, LV-1082",
+                        isSpecial: false
                     },
                     {
                         name: "Veterinārā klīnika-aptieka-zooveikals 'Caps'",
                         lat: 57.53891978417233,         
                         lng: 25.4189304706581,
-                        address: "Kārļa Baumaņa iela 9, Valmiera, LV-4201"
+                        address: "Kārļa Baumaņa iela 9, Valmiera, LV-4201",
+                        isSpecial: false
                     },
                     {
                         name: "AnRiVet, veterinārā aptieka, klīnika, dzīvnieku viesnīca",
                         lat: 56.50011777290585,         
                         lng: 27.334991664983654,
-                        address: "Krāslavas iela 4, Rēzekne, LV-4601"
+                        address: "Krāslavas iela 4, Rēzekne, LV-4601",
+                        isSpecial: false
                     },
                     {
                         name: "Vet Spec",
                         lat: 57.1436814709222,         
                         lng: 24.852548226565293,
-                        address: "Ventas iela 12, Sigulda, Siguldas pilsēta, Siguldas novads, LV-2150"
+                        address: "Ventas iela 12, Sigulda, Siguldas pilsēta, Siguldas novads, LV-2150",
+                        isSpecial: false
                     },
                     {
                         name: "Ikšķiles Veterinārā ambulance",
                         lat: 56.838955373505584,         
                         lng: 24.504862574617533,
-                        address: "Daugavas prospekts 38A, Ikšķile, Ikšķile pilsēta, Ogres novads, LV-5052"
+                        address: "Daugavas prospekts 38A, Ikšķile, Ikšķile pilsēta, Ogres novads, LV-5052",
+                        isSpecial: false
                     },
                     {
                         name: "Pārgaujas veterinārā klīnika un aptieka",
                         lat: 57.5336474999062,         
                         lng: 25.427713105888532,
-                        address: "Mazā Stacijas iela 5, Valmiera, LV-4201"
+                        address: "Mazā Stacijas iela 5, Valmiera, LV-4201",
+                        isSpecial: false
                     },
                     {
                         name: "Ogres Veterinārā ambulance, SIA",
                         lat: 56.819638345745595,         
                         lng: 24.614637167493807,
-                        address: "Brīvības iela 39, Ogre, Ogres pilsēta, Ogres novads, LV-5001"
+                        address: "Brīvības iela 39, Ogre, Ogres pilsēta, Ogres novads, LV-5001",
+                        isSpecial: false
                     },
                     {
                         name: "Grobiņas Veterinārā Klīnika",
                         lat: 56.534592731178975,         
                         lng: 21.182909652258328,
-                        address: "Alejas iela 24, Grobiņa, Grobiņa pilsēta, Dienvidkurzemes novads, LV-3430"
+                        address: "Alejas iela 24, Grobiņa, Grobiņa pilsēta, Dienvidkurzemes novads, LV-3430",
+                        isSpecial: false
                     },
                     {
                         name: "Pļavnieki, veterinārā klīnika, Anivet, SIA",
                         lat: 56.933530306714665,         
                         lng: 24.203558881872272,
-                        address: "J. Vācieša Iela 1c, Latgales priekšpilsēta, Rīga, LV-1021"
+                        address: "J. Vācieša Iela 1c, Latgales priekšpilsēta, Rīga, LV-1021",
+                        isSpecial: false
                     },
                     {
                         name: "Veterinārais centrs ZuZu.land",
                         lat: 57.39060352566547,         
                         lng: 21.57188662463244,
-                        address: "Jūras iela 1A, Ventspils, LV-3601"
+                        address: "Jūras iela 1A, Ventspils, LV-3601",
+                        isSpecial: false
                     },
                     {
                         name: "JELGAVAS CENTRA VETERINĀRĀ KLĪNIKA",
                         lat: 56.65112568891663,         
                         lng: 23.727404791471724,
-                        address: "Driksas iela 1, Jelgava, LV-3001"
+                        address: "Driksas iela 1, Jelgava, LV-3001",
+                        isSpecial: false
                     },
                     {
                         name: "Cheirons",
                         lat: 57.38828079264879,         
                         lng: 21.55306854150267,
-                        address: "Katoļu iela 36, Ventspils, LV-3601"
+                        address: "Katoļu iela 36, Ventspils, LV-3601",
+                        isSpecial: false
                     },
                     {
                         name: "Siguldas novada veterinārais serviss",
                         lat: 57.15119680814526,         
                         lng: 24.869526655442286,
-                        address: "Vainagu iela 5, Sigulda, Siguldas pilsēta, Siguldas novads, LV-2150"
+                        address: "Vainagu iela 5, Sigulda, Siguldas pilsēta, Siguldas novads, LV-2150",
+                        isSpecial: false
                     },
                     {
                         name: "Slokas veterinārā ambulance",
                         lat: 56.950887880188986,         
                         lng: 23.614157321339196,
-                        address: "Tirzas iela 37, Jūrmala, LV-2011"
+                        address: "Tirzas iela 37, Jūrmala, LV-2011",
+                        isSpecial: false
                     },
                     {
                         name: "Līvānu veterinārais serviss SIA",
                         lat: 56.353144409663706,         
                         lng: 26.176643057856623,
-                        address: "Rīgas iela 100, Līvāni, Līvānu pilsēta, Līvānu novads, LV-5316"
+                        address: "Rīgas iela 100, Līvāni, Līvānu pilsēta, Līvānu novads, LV-5316",
+                        isSpecial: false
                     },
                     {
                         name: "Solvitas Zvirgzdiņas Veterinārā klīnika Tukumā",
                         lat: 56.969575802324634,         
                         lng: 23.15039710127561,
-                        address: "Aleksandra iela 1, Tukums, Tukuma pilsēta, Tukuma novads, LV-3101"
+                        address: "Aleksandra iela 1, Tukums, Tukuma pilsēta, Tukuma novads, LV-3101",
+                        isSpecial: false
                     },
                     {
                         name: "Endzeles B. veterinārā privātprakse",
                         lat: 56.788618819192095,         
                         lng: 23.93588318619067,
-                        address: "Jelgavas iela 15, Olaine, Olaines pilsēta, Olaines novads, LV-2114"
+                        address: "Jelgavas iela 15, Olaine, Olaines pilsēta, Olaines novads, LV-2114",
+                        isSpecial: false
                     },
                     {
                         name: "Bufo, veterinārā klīnika",
                         lat: 56.82767923727069,         
                         lng: 24.23827832080393,
-                        address: "Nākotnes iela 1, Ķekava, Ķekavas pagasts, Ķekavas novads, LV-2123"
+                        address: "Nākotnes iela 1, Ķekava, Ķekavas pagasts, Ķekavas novads, LV-2123",
+                        isSpecial: false
                     },
                     {
                         name: "4 MĪĻAS ĶEPAS, Veselības māja dzīvniekiem",
                         lat: 57.54938409762144,         
                         lng: 25.44624984681345,
-                        address: "Loku iela 21, Valmiera, LV-4201"
+                        address: "Loku iela 21, Valmiera, LV-4201",
+                        isSpecial: false
                     },
                     {
                         name: "Terion, Veterinārā klīnika",
                         lat: 56.96052860564928,         
                         lng: 24.145202366206362,
-                        address: "Laboratorijas iela 2a, Latgales priekšpilsēta, Rīga, LV-1012"
+                        address: "Laboratorijas iela 2a, Latgales priekšpilsēta, Rīga, LV-1012",
+                        isSpecial: false
                     },
                 ];
 
-                    // Add Markers
                     shelters.forEach(shelter => {
                     const marker = new google.maps.Marker({
                         position: { lat: shelter.lat, lng: shelter.lng },
                         map: map,
                         title: shelter.name,
+                        icon: shelter.isSpecial ? specialIcon : defaultIcon
                     });
 
-                    // Info Window
                     const infowindow = new google.maps.InfoWindow({
                         content: `<div><strong>${shelter.name}</strong><br>${shelter.address}</div>`,
                     });
