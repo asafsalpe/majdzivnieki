@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="style.css" />
     <title>Kaķa barošana un uzturs</title>
     <script>
-        function calculateFeeding() {
-            var age = document.getElementById('age').value;
-            var weight = document.getElementById('weight').value;
-            var result = "";
-            if (Math.abs(age) <= 6) {
+        function calculateFeeding() { // funkcija barošanas biežuma un daudzuma aprēķināšanai
+            var age = document.getElementById('age').value; // iegūst vecumu
+            var weight = document.getElementById('weight').value; // iegūst svaru
+            var result = ""; // lai rezultāta vietā pirms ir aprēķināts būtu tukšums
+            if (Math.abs(age) <= 6) { // kaķēns
                 result = "Jūsu kaķēnam ieteicams ēst 4-5 reizes dienā, aptuveni " + (Math.abs(weight) * 50) + " gramus dienā.";
-            } else {
+            } else { // kaķis
                 result = "Jūsu kaķim ieteicams ēst 2-3 reizes dienā, aptuveni " + (Math.abs(weight) * 30) + " gramus dienā.";
             }
             document.getElementById('result').innerHTML = result;
@@ -26,7 +26,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Sākumlapa</a></li>
-                <li><a class="active" href="barosana.html">Uzturs</a></li>
+                <li><a class="active" href="barosana.html">Uzturs</a></li> 
                 <li><a href="veseliba.html">Veselība</a></li>
                 <li><a href="uzvediba.html">Uzvedība</a></li>
                 <li><a href="iegade.html">Iegāde</a></li>
@@ -199,7 +199,7 @@
             </section>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    document.querySelectorAll('.harmful-foods li .tooltip').forEach(item => {  // Corrected selector
+                    document.querySelectorAll('.harmful-foods li .tooltip').forEach(item => {
                         item.addEventListener('mouseover', function() {
                             const imageURL = this.parentNode.dataset.image;
                             document.getElementById('harmfulImage').setAttribute('src', imageURL);
@@ -270,7 +270,7 @@
     </main>
     <footer class="footer">
         <p>&copy; 2025 Murrātava. Veidots ar ❤️ kaķiem un viņu saimniekiem. <a href="contact.html">Sazinies ar
-                mums</a></p>
+                mums!</a></p>
     </footer>
 
 </body>

@@ -115,6 +115,10 @@
                     }, // Latvia Coordinates
                     zoom: 7,
                 });
+                const defaultIcon = {
+                        url: "red.png",
+                        scaledSize: new google.maps.Size(30,30)
+                    }
 
                 //Shelter Locations
                 const shelters = [
@@ -239,6 +243,7 @@
                 // Add Markers
                 shelters.forEach(shelter => {
                 const marker = new google.maps.Marker({
+                    icon: defaultIcon,
                     position: { lat: shelter.lat, lng: shelter.lng },
                     map: map,
                     title: shelter.name,
